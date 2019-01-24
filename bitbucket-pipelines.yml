@@ -17,4 +17,4 @@ pipelines:
           deployment: production
           script:
             - export IMAGE_NAME=mishakalmah/json-compare:$BITBUCKET_COMMIT
-            - ssh -tt deploy@jsoncompare.ru ./deploy -i $IMAGE_NAME -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
+            - ssh -tt $USERNAME_DEPLOY@$SERVER ./deploy -i $IMAGE_NAME -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
