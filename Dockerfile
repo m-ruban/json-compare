@@ -6,7 +6,7 @@ WORKDIR /var/www/json-compare
 # env
 RUN echo " \n\
 APP_PORT=3001\n\
-NODE_ENV=prod\n\
+NODE_ENV=production\n\
 " >> .env
 
 # dependencies (server)
