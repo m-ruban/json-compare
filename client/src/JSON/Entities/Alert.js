@@ -1,5 +1,6 @@
 import React from 'react'
 import {Badge} from 'reactstrap'
+import Constans from '../../Constans'
 
 const Alert = ({id, alert, showAlerts, showRequired}) => {
 
@@ -7,8 +8,8 @@ const Alert = ({id, alert, showAlerts, showRequired}) => {
   if ((showAlerts || showRequired) && alert) {
 
     let show = false
-    if (showAlerts) show = alert.res === 'diff'
-    if (showRequired && !show) show = alert.res === 'req'
+    if (showAlerts) show = alert.res === Constans('COMPARE_DIFF')
+    if (showRequired && !show) show = alert.res === Constans('COMPARE_REQ')
 
     if (show) {
       node = <Badge color={alert.res} pill>!</Badge>

@@ -1,3 +1,5 @@
+import Constans from '../Constans'
+
 let equalityTypes, state
 export function equalAlerts(left, right, type) {
   state = new Map()
@@ -34,6 +36,11 @@ function findByPath(obj, paths) {
 }
 
 function compare(left, right, keys = []) {
+
+  const eq = Constans('COMPARE_EQ'),
+    diff = Constans('COMPARE_DIFF'),
+    req = Constans('COMPARE_REQ')
+
   for(const prop in left) {
     if (!left.hasOwnProperty(prop)) continue
 
@@ -46,32 +53,32 @@ function compare(left, right, keys = []) {
     switch (equalityTypes) {
       case '==':
         if (!compValue){
-          res = 'req'
+          res = req
         } else {
           if (type === 'object') {
-            res = str(value) === str(compValue) ? 'eq' : 'diff'
+            res = str(value) === str(compValue) ? eq : diff
           } else {
-            res = value == compValue ? 'eq' : 'diff'
+            res = value == compValue ? eq : diff
           }
         }
         break;
       case '===':
         if (!compValue){
-          res = 'req'
+          res = req
         } else {
           if (type === 'object') {
-            res = str(value) === str(compValue) ? 'eq' : 'diff'
+            res = str(value) === str(compValue) ? eq : diff
           } else {
-            res = value === compValue ? 'eq' : 'diff'
+            res = value === compValue ? eq : diff
           }
         }
         break;
       default:
-        res = compValue ? 'eq' : 'req'
+        res = compValue ? eq : req
         break;
     }
 
-    if (res !== 'eq') {
+    if (res !== eq) {
       state.set(path.join('-'), {res: res, scalar: type !== 'object'})
     }
 

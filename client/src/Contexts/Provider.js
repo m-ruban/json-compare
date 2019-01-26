@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {equalAlerts, parse} from './Helper'
+import Constans from '../Constans'
 
 const AppContext = React.createContext()
 
@@ -18,7 +19,8 @@ export class AppProvider extends Component {
       changeObj: this.changeObj.bind(this),
       equalityTypes: '==',
       changeEqualityTypes: this.changeEqualityTypes.bind(this),
-      alerts: new Map()
+      alerts: new Map(),
+      feedback: Constans('FEEDBACK_LINK')
     }
   }
 
