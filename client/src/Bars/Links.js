@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Nav, NavItem, Collapse} from 'reactstrap'
+import { AppConsumer } from '../Contexts/Provider'
+import { Nav, NavItem, Collapse, NavLink} from 'reactstrap'
 import DropdownTests from './Examples/DropdownTests'
 
 class Navigate extends Component {
@@ -26,6 +27,21 @@ class Navigate extends Component {
           <DropdownTests />
           <NavItem>
             <Link className="nav-link" to="/faq/">FAQ</Link>
+          </NavItem>
+          <NavItem>
+            <AppConsumer>
+              {
+                ({feedback}) => (
+                  <NavLink
+                    className="nav-link"
+                    href={feedback}
+                    target="_blank"
+                  >
+                    Feedback
+                  </NavLink>
+                )
+              }
+            </AppConsumer>
           </NavItem>
         </Nav>
       </Collapse>
