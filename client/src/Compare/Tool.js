@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppConsumer } from '../../Contexts/Provider'
+import { AppConsumer } from '../Contexts/Provider'
 import {Col, Row} from 'reactstrap'
 import Result from './Cols/Result'
 import Area from './Cols/Area'

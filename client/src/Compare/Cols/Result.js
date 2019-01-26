@@ -1,6 +1,6 @@
 import React from 'react'
 import {Col} from 'reactstrap'
-import Prop from '../../../JSON/Prop'
+import Prop from '../../JSON/Prop'
 
 const Result = ({obj, showAlerts, showRequired}) => (
   <Col xs="7">
