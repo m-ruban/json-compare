@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {Badge} from 'reactstrap'
 import Constans from '../../Constans'
 
-const Alert = ({id, alert, showAlerts, showRequired}) => {
+const Alert = ({alert, showAlerts, showRequired}) => {
 
   let node = null
   if ((showAlerts || showRequired) && alert) {
@@ -18,6 +19,12 @@ const Alert = ({id, alert, showAlerts, showRequired}) => {
   }
 
   return node
+}
+
+Alert.propTypes = {
+  alert: PropTypes.object,
+  showAlerts: PropTypes.bool,
+  showRequired: PropTypes.bool
 }
 
 export default Alert

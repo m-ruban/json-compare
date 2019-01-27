@@ -1,10 +1,17 @@
 import React from 'react'
+import { AppConsumer } from '../Contexts/Provider'
 
 const Footer = () => (
   <footer className="bg-light">
-    <div className="autor text-muted py-3">Autor -&nbsp;
-      <a target="_blank" href="https://bitbucket.org/Dolan_Duck/" rel="noopener noreferrer">DD</a>
-    </div>
+    <AppConsumer>
+      {
+        ({ autor }) => (
+          <div className="autor text-muted py-3">Autor -&nbsp;
+            <a target="_blank" href={autor} rel="noopener noreferrer">DD</a>
+          </div>
+        )
+      }
+    </AppConsumer>
   </footer>
 )
 

@@ -6,12 +6,10 @@ const Panel = () => (
   <AppConsumer>
     {
       ({alerts}) => {
-
         const nodeAlerts = [],
           nodeRequired = []
 
         alerts.forEach((alert, path) => {
-
           if (!alert.scalar) return
 
           const value = path.split('-').join('->')
@@ -22,7 +20,6 @@ const Panel = () => (
             default:
               nodeAlerts.push(<div key={path}>{value}</div>)
           }
-
         })
 
         return (

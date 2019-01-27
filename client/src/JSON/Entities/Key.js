@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {Badge} from 'reactstrap'
 
 const Key = ({value, isArray}) => {
@@ -13,6 +14,11 @@ const Key = ({value, isArray}) => {
     <>"{value}"</>
   )
 
+}
+
+Key.propTypes = {
+  value: PropTypes.string,
+  isArray: PropTypes.bool
 }
 
 export default Key

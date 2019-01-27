@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const Swith = ({isCompare, toggleCompare}) => {
+const Switch = ({isCompare, toggleCompare}) => {
   return (
     <>
       <span className={`parse${isCompare ? ' pointer' : ''}`} onClick={isCompare ? toggleCompare : null}>parse</span>
@@ -10,5 +11,9 @@ const Swith = ({isCompare, toggleCompare}) => {
   )
 }
 
-export default Swith
+Switch.propTypes = {
+  isCompare: PropTypes.bool,
+  toggleCompare: PropTypes.func
+}
 
+export default Switch

@@ -20,7 +20,8 @@ export class AppProvider extends Component {
       equalityTypes: '==',
       changeEqualityTypes: this.changeEqualityTypes.bind(this),
       alerts: new Map(),
-      feedback: Constans('FEEDBACK_LINK')
+      feedback: Constans('FEEDBACK_LINK'),
+      autor: Constans('AUTOR_LINK')
     }
   }
 
@@ -37,7 +38,6 @@ export class AppProvider extends Component {
   changeTool(event) {
     const {value} = event.target
     this.setState({toolObject: parse(value), toolStr: value}, this.changeAlerts)
-
   }
 
   changeObj(event) {

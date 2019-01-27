@@ -3,7 +3,7 @@ import {
   Row, Col, ListGroup, ListGroupItem,
   ListGroupItemHeading, ListGroupItemText, Badge
 } from 'reactstrap'
-import withContainer from './withContainer'
+import withContainer from '../HOC/withContainer'
 
 const Faq = () => (
   <Row>

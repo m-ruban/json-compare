@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Scalar from './Entities/Scalar'
-import Obj from './Entities/Obj/Body'
+import Obj from './Entities/Obj/Brackets'
 
-const Prop = ({value, lvl, showAlerts, showRequired, path = []}) => {
+const Prop = ({value, lvl, showAlerts, showRequired, path}) => {
   if (typeof value === 'object' && value) {
     return (
       <Obj
@@ -14,6 +15,7 @@ const Prop = ({value, lvl, showAlerts, showRequired, path = []}) => {
       />
     )
   }
+
   return (
     <Scalar
       path={path}
@@ -22,6 +24,19 @@ const Prop = ({value, lvl, showAlerts, showRequired, path = []}) => {
       showRequired={showRequired}
     />
   )
+}
+
+Prop.propTypes = {
+  value: PropTypes.any,
+  lvl: PropTypes.number,
+  path: PropTypes.array,
+  showAlerts: PropTypes.bool,
+  showRequired: PropTypes.bool
+}
+
+Prop.defaultProps = {
+  lvl: 1,
+  path: []
 }
 
 export default Prop

@@ -1,53 +1,37 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import { AppConsumer } from '../Contexts/Provider'
-import { Nav, NavItem, Collapse, NavLink} from 'reactstrap'
+import { Nav, NavItem, Collapse, NavLink, NavbarToggler } from 'reactstrap'
 import DropdownTests from './Examples/DropdownTests'
+import withToggleState from '../HOC/withToggleState'
 
-class Navigate extends Component {
+const Links = ({isOpen, toggle, feedback}) => (
+  <>
+    <NavbarToggler onClick={toggle} />
+    <Collapse isOpen={isOpen} navbar>
+      <Nav className="ml-auto" navbar>
+        <DropdownTests />
+        <NavItem>
+          <Link className="nav-link" to="/faq/">FAQ</Link>
+        </NavItem>
+        <NavItem>
+          <NavLink
+            className="nav-link"
+            href={feedback}
+            target="_blank"
+          >
+            Feedback
+          </NavLink>
+        </NavItem>
+      </Nav>
+    </Collapse>
+  </>
+)
 
-  constructor(props) {
-    super(props)
-    this.toggleMenu = this.toggleMenu.bind(this)
-    this.state = {
-      isOpen: false
-    }
-  }
-
-  toggleMenu() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-
-  render() {
-    return (
-      <Collapse isOpen={this.state.isOpen} navbar>
-        <Nav className="ml-auto" navbar>
-          <DropdownTests />
-          <NavItem>
-            <Link className="nav-link" to="/faq/">FAQ</Link>
-          </NavItem>
-          <NavItem>
-            <AppConsumer>
-              {
-                ({feedback}) => (
-                  <NavLink
-                    className="nav-link"
-                    href={feedback}
-                    target="_blank"
-                  >
-                    Feedback
-                  </NavLink>
-                )
-              }
-            </AppConsumer>
-          </NavItem>
-        </Nav>
-      </Collapse>
-    )
-  }
-
+Links.propTypes = {
+  feedback: PropTypes.string
 }
 
-export default Navigate
+const LinksWithToggleState = withToggleState(Links)
+
+export default LinksWithToggleState

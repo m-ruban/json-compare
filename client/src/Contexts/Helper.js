@@ -35,10 +35,35 @@ function findByPath(obj, paths) {
   return current
 }
 
-function compare(left, right, keys = []) {
+function compareValue(leftValue, rightValue, equality) {
 
   const eq = Constans('COMPARE_EQ'),
     diff = Constans('COMPARE_DIFF'),
+    req = Constans('COMPARE_REQ'),
+    type = typeof leftValue
+
+  const operators = {
+    '==': (a, b) => a == b ,
+    '===': (a, b) => a === b,
+  }
+
+  let res
+  if (!rightValue){
+    res = req
+  } else {
+    if (type === 'object') {
+      res = str(leftValue) === str(rightValue) ? eq : diff
+    } else {
+      res = operators[equality](leftValue, rightValue) ? eq : diff
+    }
+  }
+
+  return res
+}
+
+function compare(left, right, keys = []) {
+
+  const eq = Constans('COMPARE_EQ'),
     req = Constans('COMPARE_REQ')
 
   for(const prop in left) {
@@ -46,40 +71,24 @@ function compare(left, right, keys = []) {
 
     const value = left[prop],
       path = keys.slice().concat([prop]),
-      compValue = findByPath(right, path),
+      rightValue = findByPath(right, path),
       type = typeof value
 
     let res
     switch (equalityTypes) {
-      case '==':
-        if (!compValue){
-          res = req
-        } else {
-          if (type === 'object') {
-            res = str(value) === str(compValue) ? eq : diff
-          } else {
-            res = value == compValue ? eq : diff
-          }
-        }
-        break;
-      case '===':
-        if (!compValue){
-          res = req
-        } else {
-          if (type === 'object') {
-            res = str(value) === str(compValue) ? eq : diff
-          } else {
-            res = value === compValue ? eq : diff
-          }
-        }
+      case 'ignore':
+        res = rightValue ? eq : req
         break;
       default:
-        res = compValue ? eq : req
+        res = compareValue(value, rightValue, equalityTypes)
         break;
     }
 
     if (res !== eq) {
-      state.set(path.join('-'), {res: res, scalar: type !== 'object'})
+      state.set(path.join('-'), {
+        res: res,
+        scalar: type !== 'object'
+      })
     }
 
     if (type === 'object') {
