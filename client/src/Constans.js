@@ -5,7 +5,9 @@ const Constants = function(name) {
     AUTOR_LINK: "https://bitbucket.org/Dolan_Duck/",
     COMPARE_EQ: "eq",
     COMPARE_DIFF: "diff",
-    COMPARE_REQ: "req"
+    COMPARE_REQ: "req",
+    LOG_INFO: "info",
+    LOG_ERROR: "error"
   }
 
   return constans[name]

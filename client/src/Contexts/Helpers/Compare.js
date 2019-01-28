@@ -1,4 +1,4 @@
-import Constans from '../Constans'
+import Constans from '../../Constans'
 
 let equalityTypes, state
 export function equalAlerts(left, right, type) {
@@ -6,14 +6,6 @@ export function equalAlerts(left, right, type) {
   equalityTypes = type
   compare(left, right)
   return state
-}
-
-export function parse(str){
-  let value = {}
-  try {
-    value = JSON.parse(str)
-  } catch (err) {}
-  return value
 }
 
 function str(value) {

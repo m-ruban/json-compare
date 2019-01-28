@@ -1,20 +1,22 @@
 import React from 'react'
 import { AppConsumer } from '../Contexts/Provider'
 import {Col, Row, Badge} from 'reactstrap'
+import Constans from '../Constans'
 
 const Panel = () => (
   <AppConsumer>
     {
       ({alerts}) => {
         const nodeAlerts = [],
-          nodeRequired = []
+          nodeRequired = [],
+          req = Constans('COMPARE_REQ')
 
         alerts.forEach((alert, path) => {
           if (!alert.scalar) return
 
           const value = path.split('-').join('->')
           switch (alert.res) {
-            case 'req':
+            case req:
               nodeRequired.push(<div key={path}>{value}</div>)
               break;
             default:

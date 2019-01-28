@@ -6,7 +6,7 @@ import EqualityTypes from './Options/EqualityTypes'
 import Switch from './Options/Switch'
 import Links from './Links'
 
-const Navigate = () => (
+const Bar = () => (
   <header>
     <AppConsumer>
       {
@@ -31,4 +31,4 @@ const Navigate = () => (
   </header>
 )
 
-export default Navigate
+export default Bar
