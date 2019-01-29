@@ -1,14 +1,13 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react';
 
-const withToggleMenu = (WrappedComponent, defaultOpen = false) => (
+const withToggleMenu = (WrappedComponent, defaultOpen = false) =>
   class extends Component {
-
     constructor(props) {
-      super(props)
-      this.toggle = this.toggle.bind(this)
+      super(props);
+      this.toggle = this.toggle.bind(this);
       this.state = {
         isOpen: defaultOpen
-      }
+      };
     }
 
     toggle() {
@@ -24,9 +23,8 @@ const withToggleMenu = (WrappedComponent, defaultOpen = false) => (
           toggle={this.toggle}
           {...this.props}
         />
-      )
+      );
     }
-  }
-)
+  };
 
-export default withToggleMenu
+export default withToggleMenu;

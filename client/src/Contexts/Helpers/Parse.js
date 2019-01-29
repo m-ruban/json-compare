@@ -1,44 +1,44 @@
-import Constans from '../../Constans'
+import Constans from '../../Constans';
 
 export function parseAndLog(str) {
   const result = parse(str),
-    {success, value} = result
+    { success, value } = result;
 
   let obj = {},
-    log = {}
+    log = {};
 
   if (success) {
-    obj = value
+    obj = value;
     log = {
       text: 'input value for object',
       type: Constans('LOG_INFO')
-    }
+    };
   } else {
     log = {
       text: result.value,
       type: Constans('LOG_ERROR')
-    }
+    };
   }
 
   return {
     obj: obj,
     log: log
-  }
+  };
 }
 
-function parse(str){
+function parse(str) {
   const result = {
     success: true,
     value: {}
-  }
+  };
 
   try {
-    result.value = JSON.parse(str)
+    result.value = JSON.parse(str);
   } catch (err) {
-    result.success = false
-    result.value = err.message
-    return result
+    result.success = false;
+    result.value = err.message;
+    return result;
   }
 
-  return result
+  return result;
 }

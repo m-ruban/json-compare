@@ -1,24 +1,20 @@
-import React from 'react'
-import { AppConsumer } from '../Contexts/Provider'
+import React from 'react';
+import { AppConsumer } from '../Contexts/Provider';
 
 const Logs = () => (
   <div className="logs pr-3 py-3">
     <div className="list">
       <AppConsumer>
-        {
-          ({log}) => {
-            const {text, type} = log
-            return (
-              log.type ?
-                <span className={type}>
-                  <u>log.{type}</u>: {text}
-                </span> : null
-            )
-          }
+        {({ log }) =>
+          log.type && (
+            <span className={log.type}>
+              <u>log.{log.type}</u>: {log.text}
+            </span>
+          )
         }
       </AppConsumer>
     </div>
   </div>
-)
+);
 
-export default Logs
+export default Logs;

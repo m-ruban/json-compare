@@ -1,91 +1,69 @@
-import Constans from '../../Constans'
+import Constans from '../../Constans';
 
-let equalityTypes, state
+let equalityTypes, state;
 export function equalAlerts(left, right, type) {
-  state = new Map()
-  equalityTypes = type
-  compare(left, right)
-  return state
+  state = new Map();
+  equalityTypes = type;
+  compare(left, right);
+  return state;
 }
 
-function str(value) {
-  return JSON.stringify(value)
-}
-
-function findByPath(obj, paths) {
-  let current = obj
+const findByPath = (obj, paths) => {
+  let current = obj;
   for (let i = 0; i < paths.length; ++i) {
-
-    const path = paths[i]
+    const path = paths[i];
     if (current[path] === undefined) {
-      return undefined
+      return undefined;
     } else {
-      current = current[path]
+      current = current[path];
     }
-
   }
-  return current
-}
+  return current;
+};
 
-function compareValue(leftValue, rightValue, equality) {
-
-  const eq = Constans('COMPARE_EQ'),
-    diff = Constans('COMPARE_DIFF'),
-    req = Constans('COMPARE_REQ'),
-    type = typeof leftValue
-
-  const operators = {
-    '==': (a, b) => a == b ,
-    '===': (a, b) => a === b,
-  }
-
-  let res
-  if (!rightValue){
-    res = req
+const compareValue = (lvalue, rvalue, type) => {
+  const op = {
+    '==': (a, b) => a == b,
+    '===': (a, b) => a === b
+  };
+  let res;
+  if (!rvalue) {
+    res = Constans('COMPARE_REQ');
   } else {
-    if (type === 'object') {
-      res = str(leftValue) === str(rightValue) ? eq : diff
-    } else {
-      res = operators[equality](leftValue, rightValue) ? eq : diff
+    if (typeof lvalue !== 'object') {
+      res = op[type](lvalue, rvalue)
+        ? Constans('COMPARE_EQ')
+        : Constans('COMPARE_DIFF');
     }
   }
+  return res;
+};
 
-  return res
-}
-
-function compare(left, right, keys = []) {
-
-  const eq = Constans('COMPARE_EQ'),
-    req = Constans('COMPARE_REQ')
-
-  for(const prop in left) {
-    if (!left.hasOwnProperty(prop)) continue
-
+const compare = (left, right, keys = []) => {
+  for (const prop in left) {
+    if (!left.hasOwnProperty(prop)) continue;
     const value = left[prop],
-      path = keys.slice().concat([prop]),
-      rightValue = findByPath(right, path),
-      type = typeof value
+      type = typeof value,
+      path = keys.slice();
 
-    let res
+    path.push(prop);
+    const rvalue = findByPath(right, path);
+
+    let res;
     switch (equalityTypes) {
       case 'ignore':
-        res = rightValue ? eq : req
+        res = rvalue ? Constans('COMPARE_EQ') : Constans('COMPARE_REQ');
         break;
       default:
-        res = compareValue(value, rightValue, equalityTypes)
+        res = compareValue(value, rvalue, equalityTypes);
         break;
     }
 
-    if (res !== eq) {
-      state.set(path.join('-'), {
-        res: res,
-        scalar: type !== 'object'
-      })
+    if (res !== Constans('COMPARE_EQ')) {
+      state.set(path.join('-'), { res: res, scalar: type !== 'object' });
     }
-
     if (type === 'object') {
-      compare(value, right, path)
+      compare(value, right, path);
     }
-
   }
-}
+};

@@ -1,30 +1,31 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {Badge} from 'reactstrap'
-import Constans from '../../Constans'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Badge } from 'reactstrap';
+import Constans from '../../Constans';
 
-const Alert = ({alert, showAlerts, showRequired}) => {
-
-  let node = null
+const Alert = ({ alert, showAlerts, showRequired }) => {
+  let node = null;
   if ((showAlerts || showRequired) && alert) {
-
-    let show = false
-    if (showAlerts) show = alert.res === Constans('COMPARE_DIFF')
-    if (showRequired && !show) show = alert.res === Constans('COMPARE_REQ')
+    let show = false;
+    if (showAlerts) show = alert.res === Constans('COMPARE_DIFF');
+    if (showRequired && !show) show = alert.res === Constans('COMPARE_REQ');
 
     if (show) {
-      node = <Badge color={alert.res} pill>!</Badge>
+      node = (
+        <Badge color={alert.res} pill>
+          !
+        </Badge>
+      );
     }
-
   }
 
-  return node
-}
+  return node;
+};
 
 Alert.propTypes = {
   alert: PropTypes.object,
   showAlerts: PropTypes.bool,
   showRequired: PropTypes.bool
-}
+};
 
-export default Alert
+export default Alert;

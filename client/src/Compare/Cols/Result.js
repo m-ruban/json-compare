@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {Col} from 'reactstrap'
-import Prop from '../../JSON/Prop'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Col } from 'reactstrap';
+import Prop from '../../JSON/Prop';
 
-const Result = ({obj, showAlerts, showRequired}) => (
+const Result = ({ obj, showAlerts, showRequired }) => (
   <Col xs="7">
     <div className="json result without-panel">
       <Prop
@@ -14,17 +14,17 @@ const Result = ({obj, showAlerts, showRequired}) => (
       />
     </div>
   </Col>
-)
+);
 
 Result.propTypes = {
   obj: PropTypes.object,
   showAlerts: PropTypes.bool,
   showRequired: PropTypes.bool
-}
+};
 
 Result.defaultProps = {
   showAlerts: false,
   showRequired: false
-}
+};
 
-export default Result
+export default Result;
