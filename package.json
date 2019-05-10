@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/Dolan_Duck/json-compare/"
+    "url": "https://github.com/m-ruban/json-compare"
   },
   "scripts": {
     "start": "node ./bin/www",
