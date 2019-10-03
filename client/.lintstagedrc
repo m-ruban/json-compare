@@ -1,0 +1,4 @@
+{
+  "*.sass": ["stylelint --syntax=sass", "git add"],
+  "*.{js,jsx}": ["eslint --fix", "git add"]
+}

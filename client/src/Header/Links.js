@@ -6,28 +6,30 @@ import DropdownTests from './Examples/DropdownTests';
 import withToggleState from '../HOC/withToggleState';
 
 const Links = ({ isOpen, toggle, feedback }) => (
-  <>
-    <NavbarToggler onClick={toggle} />
-    <Collapse isOpen={isOpen} navbar>
-      <Nav className="ml-auto" navbar>
-        <DropdownTests />
-        <NavItem>
-          <Link className="nav-link" to="/faq/">
-            FAQ
-          </Link>
-        </NavItem>
-        <NavItem>
-          <NavLink className="nav-link" href={feedback} target="_blank">
-            Feedback
-          </NavLink>
-        </NavItem>
-      </Nav>
-    </Collapse>
-  </>
+    <>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+                <DropdownTests />
+                <NavItem>
+                    <Link className="nav-link" to="/faq/">
+                        FAQ
+                    </Link>
+                </NavItem>
+                <NavItem>
+                    <NavLink className="nav-link" href={feedback} target="_blank">
+                        Feedback
+                    </NavLink>
+                </NavItem>
+            </Nav>
+        </Collapse>
+    </>
 );
 
 Links.propTypes = {
-  feedback: PropTypes.string
+    feedback: PropTypes.string,
+    isOpen: PropTypes.bool,
+    toggle: PropTypes.func,
 };
 
 const LinksWithToggleState = withToggleState(Links);

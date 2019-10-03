@@ -5,12 +5,10 @@ import ObjectCompare from '../Compare/Obj';
 import withContainer from '../HOC/withContainer';
 
 const Compare = () => (
-  <Row className="h100">
-    <Tool />
-    <ObjectCompare />
-  </Row>
+    <Row className="h100">
+        <Tool />
+        <ObjectCompare />
+    </Row>
 );
 
-const CompareWithContainer = withContainer(Compare);
-
-export default CompareWithContainer;
+export default withContainer(Compare);
