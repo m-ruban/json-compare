@@ -23,6 +23,8 @@ module.exports = {
     resolve: {
         alias: {
             constants: path.resolve(__dirname, 'src/constants'),
+            components: path.resolve(__dirname, 'src/components'),
+            HOC: path.resolve(__dirname, 'src/HOC'),
         },
         extensions: ['.jsx', '.js', '.less', '.css', '.json', '.svg', '.gif', '.jpg'],
     },

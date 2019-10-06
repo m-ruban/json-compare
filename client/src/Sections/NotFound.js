@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import withContainer from '../HOC/withContainer';
+import withContainer from 'HOC/withContainer';
 
 const NotFound = () => (
     <Row>

@@ -1,8 +1,8 @@
 import React from 'react';
-import { AppConsumer } from '../Contexts/Provider';
 import { Col, Row } from 'reactstrap';
-import Result from './Cols/Result';
-import Area from './Cols/Area';
+import { AppConsumer } from '../../Contexts/Provider';
+import Result from 'components/Compare/Cols/Result';
+import Area from 'components/Compare/Cols/Area';
 
 const ToolCompare = () => (
     <AppConsumer>

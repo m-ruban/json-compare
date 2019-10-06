@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FEEDBACK_LINK, AUTHOR_LINK } from 'constants/links';
+import { LOG_INFO } from 'constants/log';
+import { COMPARE_REQ } from 'constants/compare';
 import { equalAlerts } from './Helpers/Compare';
 import { parseAndLog } from './Helpers/Parse';
-import Constans from '../Constans';
-import PropTypes from 'prop-types';
 
 const AppContext = React.createContext();
 
@@ -32,7 +33,7 @@ export class AppProvider extends Component {
         const { isCompare } = this.state;
         const log = {
             text: 'toggle compare',
-            type: Constans('LOG_INFO'),
+            type: LOG_INFO,
         };
 
         this.setState({ isCompare: !isCompare, log: log }, this.changeAlerts);
@@ -42,7 +43,7 @@ export class AppProvider extends Component {
         const { value } = event.target;
         const log = {
             text: 'change equality types',
-            type: Constans('LOG_INFO'),
+            type: LOG_INFO,
         };
 
         this.setState({ equalityTypes: value, log: log }, this.changeAlerts);
@@ -76,7 +77,7 @@ export class AppProvider extends Component {
 
             alerts.forEach((alert) => {
                 if (!alert.scalar) return;
-                if (alert.res === Constans('COMPARE_REQ')) {
+                if (alert.res === COMPARE_REQ) {
                     req++;
                 } else {
                     diff++;
@@ -91,7 +92,7 @@ export class AppProvider extends Component {
 
             this.setState({
                 alerts: alerts,
-                log: { text: text, type: Constans('LOG_INFO') },
+                log: { text: text, type: LOG_INFO },
             });
         }
     }

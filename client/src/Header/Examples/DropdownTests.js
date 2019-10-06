@@ -4,7 +4,7 @@ import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap
 import { AppConsumer } from '../../Contexts/Provider';
 import Tool from './Tests/Tool';
 import Obj from './Tests/Obj';
-import withToggleState from '../../HOC/withToggleState';
+import withToggleState from 'HOC/withToggleState';
 
 const DropdownTests = ({ isOpen, toggle }) => (
     <AppConsumer>

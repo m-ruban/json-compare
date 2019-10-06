@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Input } from 'reactstrap';
-import Panel from '../Panel';
+import Panel from 'components/Compare/Panel';
 
 const Area = ({ str, change, showPanel }) => (
     <Col xs="5">

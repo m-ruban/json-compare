@@ -1,7 +1,7 @@
 import React from 'react';
-import { AppConsumer } from '../Contexts/Provider';
 import { Col, Row, Badge } from 'reactstrap';
-import Constans from '../Constans';
+import { COMPARE_REQ } from 'constants/compare';
+import { AppConsumer } from '../../Contexts/Provider';
 
 const Panel = () => (
     <AppConsumer>
@@ -11,7 +11,7 @@ const Panel = () => (
 
             alerts.forEach((alert, path) => {
                 if (!alert.scalar) return;
-                if (alert.res === Constans('COMPARE_REQ')) {
+                if (alert.res === COMPARE_REQ) {
                     nodesRequired.push(<div key={path}>{path}</div>);
                 } else {
                     nodesAlerts.push(<div key={path}>{path}</div>);
