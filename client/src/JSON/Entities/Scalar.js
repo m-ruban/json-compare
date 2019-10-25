@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AppConsumer } from '../../Contexts/Provider';
+import { AppConsumer } from 'context';
 import Alert from './Alert';
 
 const Scalar = ({ value, showAlerts, showRequired, path }) => {

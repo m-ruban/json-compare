@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import AppContext from 'context';
 import { FEEDBACK_LINK, AUTHOR_LINK } from 'constants/links';
 import { LOG_INFO } from 'constants/log';
 import { COMPARE_REQ } from 'constants/compare';
-import { equalAlerts } from './Helpers/Compare';
-import { parseAndLog } from './Helpers/Parse';
+import { equalAlerts } from 'modules/compare';
+import { parseAndLog } from 'modules/parse';
 
-const AppContext = React.createContext();
-
-export class AppProvider extends Component {
+class AppProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,7 +23,7 @@ export class AppProvider extends Component {
             changeEqualityTypes: this.changeEqualityTypes.bind(this),
             alerts: new Map(),
             feedback: FEEDBACK_LINK,
-            autor: AUTHOR_LINK,
+            author: AUTHOR_LINK,
             log: { text: '', type: null },
         };
     }
@@ -106,4 +105,4 @@ AppProvider.propTypes = {
     children: PropTypes.node,
 };
 
-export const AppConsumer = AppContext.Consumer;
+export default AppProvider;

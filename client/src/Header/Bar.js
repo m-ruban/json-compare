@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar } from 'reactstrap';
-import { AppConsumer } from '../Contexts/Provider';
+import { AppConsumer } from 'context';
 import EqualityTypes from './Options/EqualityTypes';
 import Switch from './Options/Switch';
 import Links from './Links';

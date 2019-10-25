@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'reactstrap';
-import { AppConsumer } from '../../Contexts/Provider';
+import { AppConsumer } from 'context';
 import Result from 'components/Compare/Cols/Result';
 import Area from 'components/Compare/Cols/Area';
 

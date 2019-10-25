@@ -1,4 +1,4 @@
-import Constans from '../../Constans';
+import { LOG_INFO, LOG_ERROR } from 'constants/log';
 
 export function parseAndLog(str) {
     const result = parse(str),
@@ -11,12 +11,12 @@ export function parseAndLog(str) {
         obj = value;
         log = {
             text: 'input value for object',
-            type: Constans('LOG_INFO'),
+            type: LOG_INFO,
         };
     } else {
         log = {
             text: result.value,
-            type: Constans('LOG_ERROR'),
+            type: LOG_ERROR,
         };
     }
 

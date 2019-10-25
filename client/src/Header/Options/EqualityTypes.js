@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormGroup, Badge, Input, Form, UncontrolledTooltip } from 'reactstrap';
-import { AppConsumer } from '../../Contexts/Provider';
+import { AppConsumer } from 'context';
 
 const EqualityTypes = () => (
     <Form className="settings" inline>

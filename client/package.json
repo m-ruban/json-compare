@@ -5,7 +5,7 @@
   "description": "json-compare front",
   "scripts": {
     "build": "NODE_ENV=production webpack -p",
-    "dev": "webpack-dev-server --open",
+    "dev": "NODE_ENV=development webpack-dev-server --open",
     "test": "NODE_ENV=test jest"
   },
   "dependencies": {

@@ -1,17 +1,17 @@
 import React from 'react';
-import { AppConsumer } from '../Contexts/Provider';
+import { AppConsumer } from 'context';
 import { Row, Container } from 'reactstrap';
-import Logs from './Logs';
+import Logs from 'components/Footer/Logs';
 
-const Bar = () => (
+const Footer = () => (
     <footer className="bg-light">
         <Container fluid>
             <Row>
                 <AppConsumer>
-                    {({ autor }) => (
+                    {({ author }) => (
                         <div className="body text-muted py-3">
-                            Autor -{' '}
-                            <a target="_blank" href={autor} rel="noopener noreferrer">
+                            Author -{' '}
+                            <a target="_blank" href={author} rel="noopener noreferrer">
                                 DD
                             </a>
                         </div>
@@ -23,4 +23,4 @@ const Bar = () => (
     </footer>
 );
 
-export default Bar;
+export default Footer;

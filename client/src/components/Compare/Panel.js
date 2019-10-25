@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Row, Badge } from 'reactstrap';
 import { COMPARE_REQ } from 'constants/compare';
-import { AppConsumer } from '../../Contexts/Provider';
+import { AppConsumer } from 'context';
 
 const Panel = () => (
     <AppConsumer>

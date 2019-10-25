@@ -1,4 +1,4 @@
-import Constans from '../../Constans';
+import { COMPARE_EQ, COMPARE_DIFF, COMPARE_REQ } from 'constants/compare';
 
 let equalityTypes, state;
 export function equalAlerts(left, right, type) {
@@ -28,10 +28,10 @@ const compareValue = (lvalue, rvalue, type) => {
     };
     let res;
     if (!rvalue) {
-        res = Constans('COMPARE_REQ');
+        res = COMPARE_REQ;
     } else {
         if (typeof lvalue !== 'object') {
-            res = op[type](lvalue, rvalue) ? Constans('COMPARE_EQ') : Constans('COMPARE_DIFF');
+            res = op[type](lvalue, rvalue) ? COMPARE_EQ : COMPARE_DIFF;
         }
     }
     return res;
@@ -50,14 +50,14 @@ const compare = (left, right, keys = []) => {
         let res;
         switch (equalityTypes) {
             case 'ignore':
-                res = rvalue ? Constans('COMPARE_EQ') : Constans('COMPARE_REQ');
+                res = rvalue ? COMPARE_EQ : COMPARE_REQ;
                 break;
             default:
                 res = compareValue(value, rvalue, equalityTypes);
                 break;
         }
 
-        if (res !== Constans('COMPARE_EQ')) {
+        if (res !== COMPARE_EQ) {
             state.set(path.join('-'), { res: res, scalar: type !== 'object' });
         }
         if (type === 'object') {

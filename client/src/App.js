@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { AppProvider } from './Contexts/Provider';
+import AppProvider from 'context/provider';
 import FAQ from './Sections/FAQ';
 import Compare from './Sections/Compare';
 import NotFound from './Sections/NotFound';
 import Header from './Header/Bar';
-import Footer from './Footer/Bar';
+import Footer from 'components/Footer';
 
 const App = () => (
     <Router>

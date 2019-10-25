@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppConsumer } from '../Contexts/Provider';
+import { AppConsumer } from 'context';
 
 const Logs = () => (
     <div className="logs pr-3 py-3">

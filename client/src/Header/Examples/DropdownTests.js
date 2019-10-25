@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { AppConsumer } from '../../Contexts/Provider';
+import { AppConsumer } from 'context';
 import Tool from './Tests/Tool';
 import Obj from './Tests/Obj';
 import withToggleState from 'HOC/withToggleState';
