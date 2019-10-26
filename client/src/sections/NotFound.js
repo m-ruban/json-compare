@@ -14,6 +14,4 @@ const NotFound = () => (
     </Row>
 );
 
-const NotFoundWithContainer = withContainer(NotFound);
-
-export default NotFoundWithContainer;
+export default withContainer(NotFound);

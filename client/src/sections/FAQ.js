@@ -47,6 +47,4 @@ const Faq = () => (
     </Row>
 );
 
-const FaqWithContainer = withContainer(Faq);
-
-export default FaqWithContainer;
+export default withContainer(Faq);
