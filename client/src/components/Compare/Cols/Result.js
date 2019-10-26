@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'reactstrap';
-import Prop from '../../../JSON/Prop';
+import Prop from 'components/JSON/Prop';
 
 const Result = ({ obj, showAlerts, showRequired }) => (
     <Col xs="7">

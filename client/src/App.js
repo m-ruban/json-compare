@@ -1,11 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import AppProvider from 'context/provider';
-import FAQ from './Sections/FAQ';
-import Compare from './Sections/Compare';
-import NotFound from './Sections/NotFound';
-import Header from './Header/Bar';
+import FAQ from 'sections/FAQ';
+import Compare from 'sections/Compare';
+import NotFound from 'sections/NotFound';
+import Header from 'components/Header';
 import Footer from 'components/Footer';
+
+import 'root/App.sass';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => (
     <Router>

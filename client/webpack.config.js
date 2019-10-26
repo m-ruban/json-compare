@@ -22,6 +22,8 @@ module.exports = {
     },
     resolve: {
         alias: {
+            root: path.resolve(__dirname, 'src'),
+            sections: path.resolve(__dirname, 'src/sections'),
             constants: path.resolve(__dirname, 'src/constants'),
             components: path.resolve(__dirname, 'src/components'),
             HOC: path.resolve(__dirname, 'src/HOC'),

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Key from '../Key';
 import Type from '../Type';
-import Prop from '../../Prop';
+import Prop from 'components/JSON/Prop';
 
 const Body = ({ obj, lvl, path, showAlerts, showRequired, isArray }) => (
     <>

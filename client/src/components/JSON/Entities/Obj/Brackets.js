@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import Icon from './Icon';
 import Body from './Body';
-import withToggleState from '../../../HOC/withToggleState';
 
-const Brackets = ({ obj, lvl, path, showAlerts, showRequired, isOpen, toggle }) => {
+const Brackets = ({ obj, lvl, path, showAlerts, showRequired }) => {
+    const [isOpen, setOpen] = useState(true);
+    const toggle = useCallback(() => {
+        setOpen(!isOpen);
+    }, [isOpen]);
     const isArray = Array.isArray(obj);
     return (
         <>
@@ -31,10 +34,6 @@ Brackets.propTypes = {
     path: PropTypes.array,
     showAlerts: PropTypes.bool,
     showRequired: PropTypes.bool,
-    isOpen: PropTypes.bool,
-    toggle: PropTypes.func,
 };
 
-const BracketsWithToggleState = withToggleState(Brackets, true);
-
-export default BracketsWithToggleState;
+export default Brackets;
