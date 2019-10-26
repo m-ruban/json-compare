@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'reactstrap';
-import 'HOC/withContainer/withContainer.less';
+import 'hocs/withContainer/withContainer.less';
 
 const withContainer = (WrappedComponent) => {
     const ComponentWithContainer = () => (
