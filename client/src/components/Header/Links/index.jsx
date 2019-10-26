@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { Nav, NavItem, Collapse, NavLink, NavbarToggler } from 'reactstrap';
 import Examples from 'components/Header/Links/Examples';
+import FAQ from 'components/Header/Links/FAQ';
 
 const Links = ({ feedback }) => {
     const [isOpen, setOpen] = useState(false);
@@ -16,9 +16,9 @@ const Links = ({ feedback }) => {
                 <Nav className="ml-auto" navbar>
                     <Examples />
                     <NavItem>
-                        <Link className="nav-link" to="/faq/">
-                            FAQ
-                        </Link>
+                        <NavLink className="nav-link">
+                            <FAQ />
+                        </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink className="nav-link" href={feedback} target="_blank">

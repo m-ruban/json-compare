@@ -12,7 +12,7 @@ const Footer = () => (
                         <div className="body text-muted py-3">
                             Author -{' '}
                             <a target="_blank" href={author} rel="noopener noreferrer">
-                                DD
+                                wardak
                             </a>
                         </div>
                     )}

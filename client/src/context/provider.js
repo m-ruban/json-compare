@@ -6,6 +6,7 @@ import { LOG_INFO } from 'constants/log';
 import { COMPARE_REQ } from 'constants/compare';
 import { equalAlerts } from 'modules/compare';
 import { parseAndLog } from 'modules/parse';
+import { EQUALITY_TYPE_STRICT } from 'constants/equality';
 
 class AppProvider extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class AppProvider extends Component {
             objStr: '',
             objObject: {},
             changeObj: this.changeObj.bind(this),
-            equalityTypes: '==',
+            equalityTypes: EQUALITY_TYPE_STRICT,
             changeEqualityTypes: this.changeEqualityTypes.bind(this),
             alerts: new Map(),
             feedback: FEEDBACK_LINK,

@@ -1,0 +1,3 @@
+export const EQUALITY_TYPE_STRICT = 'STRICT';
+export const EQUALITY_TYPE_NOT_STRICT = 'NOT_STRICT';
+export const EQUALITY_TYPE_IGNORE = 'IGNORE';

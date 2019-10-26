@@ -1,4 +1,5 @@
 import { COMPARE_EQ, COMPARE_DIFF, COMPARE_REQ } from 'constants/compare';
+import { EQUALITY_TYPE_STRICT, EQUALITY_TYPE_NOT_STRICT, EQUALITY_TYPE_IGNORE } from 'constants/equality';
 
 let equalityTypes, state;
 export function equalAlerts(left, right, type) {
@@ -23,8 +24,8 @@ const findByPath = (obj, paths) => {
 
 const compareValue = (lvalue, rvalue, type) => {
     const op = {
-        '==': (a, b) => a == b,
-        '===': (a, b) => a === b,
+        [EQUALITY_TYPE_NOT_STRICT]: (a, b) => a == b,
+        [EQUALITY_TYPE_STRICT]: (a, b) => a === b,
     };
     let res;
     if (!rvalue) {
@@ -49,7 +50,7 @@ const compare = (left, right, keys = []) => {
 
         let res;
         switch (equalityTypes) {
-            case 'ignore':
+            case EQUALITY_TYPE_IGNORE:
                 res = rvalue ? COMPARE_EQ : COMPARE_REQ;
                 break;
             default:

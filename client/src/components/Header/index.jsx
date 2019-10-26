@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar } from 'reactstrap';
+import { Navbar, NavbarBrand } from 'reactstrap';
 
 import { AppConsumer } from 'context';
 import EqualityTypes from 'components/Header/EqualityTypes';
@@ -14,10 +13,10 @@ const Header = () => (
         <AppConsumer>
             {({ isCompare, toggleCompare, feedback }) => (
                 <Navbar color="light" expand="md" light>
-                    <Link className="navbar-brand" to="/">
+                    <NavbarBrand>
                         JS
                         <img src={Logo} alt="icon" />N
-                    </Link>
+                    </NavbarBrand>
                     <Switch isCompare={isCompare} toggleCompare={toggleCompare} />
                     {isCompare && <EqualityTypes />}
                     <Links feedback={feedback} />

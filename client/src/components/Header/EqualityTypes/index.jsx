@@ -1,6 +1,7 @@
 import React from 'react';
-import { FormGroup, Badge, Input, Form, UncontrolledTooltip } from 'reactstrap';
+import { FormGroup, Input, Form } from 'reactstrap';
 import { AppConsumer } from 'context';
+import { EQUALITY_TYPE_STRICT, EQUALITY_TYPE_NOT_STRICT, EQUALITY_TYPE_IGNORE } from 'constants/equality';
 
 const EqualityTypes = () => (
     <Form className="settings" inline>
@@ -14,22 +15,12 @@ const EqualityTypes = () => (
                         value={equalityTypes}
                         onChange={changeEqualityTypes}
                     >
-                        <option value="==">==</option>
-                        <option value="===">===</option>
-                        <option value="ignore">Ignore</option>
+                        <option value={EQUALITY_TYPE_STRICT}>{EQUALITY_TYPE_STRICT}</option>
+                        <option value={EQUALITY_TYPE_NOT_STRICT}>{EQUALITY_TYPE_NOT_STRICT}</option>
+                        <option value={EQUALITY_TYPE_IGNORE}>{EQUALITY_TYPE_IGNORE}</option>
                     </Input>
                 )}
             </AppConsumer>
-            <Badge id="tooltipTypeCompare" color="success" pill>
-                ?
-            </Badge>
-            <UncontrolledTooltip target="tooltipTypeCompare">
-                == - not strict equality
-                <br />
-                === - strict equality
-                <br />
-                Ignore - comparison ignores values (only keys are compared)
-            </UncontrolledTooltip>
         </FormGroup>
     </Form>
 );

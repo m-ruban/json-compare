@@ -1,17 +1,17 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import withContainer from 'hocs/withContainer';
+import trl from 'modules/translation';
 
 const NotFound = () => (
     <Row>
         <Col xs={12}>
-            <h4>Not found</h4>
+            <h4>{trl('NotFound.title')}</h4>
             <div>
-                <Link to="/">Return to Home Page</Link>
+                <Link to="/">{trl('NotFound.link')}</Link>
             </div>
         </Col>
     </Row>
 );
 
-export default withContainer(NotFound);
+export default NotFound;

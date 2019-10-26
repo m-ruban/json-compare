@@ -26,7 +26,6 @@ module.exports = {
             sections: path.resolve(__dirname, 'src/sections'),
             constants: path.resolve(__dirname, 'src/constants'),
             components: path.resolve(__dirname, 'src/components'),
-            hocs: path.resolve(__dirname, 'src/hocs'),
             modules: path.resolve(__dirname, 'src/modules'),
             context: path.resolve(__dirname, 'src/context'),
         },
