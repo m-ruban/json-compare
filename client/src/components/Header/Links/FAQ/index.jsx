@@ -25,7 +25,7 @@ const FAQ = () => {
     return (
         <Fragment>
             <span className="faq-link" onClick={toggle}>
-                FAQ
+                {trl('Header.Links.FAQ.title')}
             </span>
             <Modal isOpen={modal} toggle={toggle} size="lg">
                 <ModalHeader toggle={toggle}>FAQ</ModalHeader>
@@ -75,7 +75,7 @@ const FAQ = () => {
                 </ModalBody>
                 <ModalFooter>
                     <Button color="primary" onClick={toggle}>
-                        OK
+                        {trl('Header.Links.FAQ.button')}
                     </Button>
                 </ModalFooter>
             </Modal>

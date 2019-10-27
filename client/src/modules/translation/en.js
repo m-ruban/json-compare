@@ -13,4 +13,12 @@ export default {
     'FAQ.ComparisonResult.question': 'And what about comparison results?',
     'FAQ.ComparisonResult.required': ' - required key',
     'FAQ.ComparisonResult.difference': " - the key exists, but it's value doesn't match the required one",
+    'Header.Switch.parse': 'parse',
+    'Header.Switch.compare': 'compare',
+    'Header.Links.feedback': 'Feedback',
+    'Header.Links.FAQ.title': 'FAQ',
+    'Header.Links.FAQ.button': 'OK',
+    'Header.Links.Examples.title': 'Examples',
+    'Header.Links.Examples.tool': 'Tool Example',
+    'Header.Links.Examples.obj': 'Object Example',
 };

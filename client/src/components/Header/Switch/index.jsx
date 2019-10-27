@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useCallback, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+import withConsumer from 'hoc/withConsumer';
+import trl from 'modules/translation';
 
 const Switch = ({ isCompare, toggleCompare }) => {
+    const onParseClick = useCallback(() => {
+        if (!isCompare) {
+            return;
+        }
+        toggleCompare();
+    }, [isCompare, toggleCompare]);
+    const onCompareClick = useCallback(() => {
+        if (isCompare) {
+            return;
+        }
+        toggleCompare();
+    }, [isCompare, toggleCompare]);
     return (
-        <>
-            <span className={`parse${isCompare ? ' pointer' : ''}`} onClick={isCompare ? toggleCompare : null}>
-                parse
+        <Fragment>
+            <span className={classNames('parse', { pointer: isCompare })} onClick={onParseClick}>
+                {trl('Header.Switch.parse')}
             </span>
             <span className="divider">&</span>
-            <span className={`compare${!isCompare ? ' pointer' : ''}`} onClick={!isCompare ? toggleCompare : null}>
-                compare
+            <span className={classNames('compare', { pointer: !isCompare })} onClick={onCompareClick}>
+                {trl('Header.Switch.compare')}
             </span>
-        </>
+        </Fragment>
     );
 };
 
@@ -20,4 +36,4 @@ Switch.propTypes = {
     toggleCompare: PropTypes.func,
 };
 
-export default Switch;
+export default withConsumer(Switch);
