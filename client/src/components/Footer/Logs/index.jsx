@@ -1,20 +1,28 @@
 import React from 'react';
-import { AppConsumer } from 'context';
+import PropTypes from 'prop-types';
+import withConsumer from 'hoc/withConsumer';
 
-const Logs = () => (
-    <div className="logs pr-3 py-3">
-        <div className="list">
-            <AppConsumer>
-                {({ log }) =>
-                    log.type && (
-                        <span className={log.type}>
-                            <u>log.{log.type}</u>: {log.text}
-                        </span>
-                    )
-                }
-            </AppConsumer>
+const Logs = ({ log }) => {
+    if (!log.type) {
+        return null;
+    }
+
+    return (
+        <div className="logs pr-3 py-3">
+            <div className="list">
+                <span className={log.type}>
+                    <u>log.{log.type}</u>: {log.text}
+                </span>
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
-export default Logs;
+Logs.propTypes = {
+    log: PropTypes.shape({
+        type: PropTypes.string,
+        text: PropTypes.text,
+    }),
+};
+
+export default withConsumer(Logs);

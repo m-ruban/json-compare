@@ -1,26 +1,29 @@
 import React from 'react';
-import { AppConsumer } from 'context';
+import PropTypes from 'prop-types';
 import { Row, Container } from 'reactstrap';
+
+import withConsumer from 'hoc/withConsumer';
+import trl from 'modules/translation';
 import Logs from 'components/Footer/Logs';
 
-const Footer = () => (
+const Footer = ({ author }) => (
     <footer className="bg-light">
         <Container fluid>
             <Row>
-                <AppConsumer>
-                    {({ author }) => (
-                        <div className="body text-muted py-3">
-                            Author -{' '}
-                            <a target="_blank" href={author} rel="noopener noreferrer">
-                                wardak
-                            </a>
-                        </div>
-                    )}
-                </AppConsumer>
+                <div className="body text-muted py-3">
+                    {trl('Footer.text')}
+                    <a target="_blank" href={author} rel="noopener noreferrer">
+                        {trl('Footer.name')}
+                    </a>
+                </div>
                 <Logs />
             </Row>
         </Container>
     </footer>
 );
 
-export default Footer;
+Footer.propTypes = {
+    author: PropTypes.string,
+};
+
+export default withConsumer(Footer);

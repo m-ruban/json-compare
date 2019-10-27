@@ -8,12 +8,12 @@ import {
     ListGroupItem,
     ListGroupItemHeading,
     ListGroupItemText,
-    Badge,
     ListGroup,
 } from 'reactstrap';
 
 import trl from 'modules/translation';
-import { EQUALITY_TYPE_IGNORE, EQUALITY_TYPE_NOT_STRICT, EQUALITY_TYPE_STRICT } from 'constants/equality';
+import Types from 'components/Header/Links/FAQ/Types';
+import Result from 'components/Header/Links/FAQ/Result';
 import 'components/Header/Links/FAQ/FAQ.less';
 
 const FAQ = () => {
@@ -37,39 +37,11 @@ const FAQ = () => {
                         </ListGroupItem>
                         <ListGroupItem>
                             <ListGroupItemHeading>{trl('FAQ.ComparisonTypes.question')}</ListGroupItemHeading>
-                            <div>
-                                {trl('FAQ.ComparisonTypes.Answer.text')}
-                                <ol>
-                                    <li>
-                                        {EQUALITY_TYPE_STRICT} - {trl('FAQ.ComparisonTypes.Answer.noStrict')}
-                                    </li>
-                                    <li>
-                                        {EQUALITY_TYPE_NOT_STRICT} - {trl('FAQ.ComparisonTypes.Answer.strict')}
-                                    </li>
-                                    <li>
-                                        {EQUALITY_TYPE_IGNORE} - {trl('FAQ.ComparisonTypes.Answer.ignore')}
-                                    </li>
-                                </ol>
-                            </div>
+                            <Types />
                         </ListGroupItem>
                         <ListGroupItem>
                             <ListGroupItemHeading>{trl('FAQ.ComparisonResult.question')}</ListGroupItemHeading>
-                            <div>
-                                <ol>
-                                    <li>
-                                        <Badge color="req" pill>
-                                            !
-                                        </Badge>
-                                        {trl('FAQ.ComparisonResult.required')}
-                                    </li>
-                                    <li>
-                                        <Badge color="diff" pill>
-                                            !
-                                        </Badge>
-                                        {trl('FAQ.ComparisonResult.difference')}
-                                    </li>
-                                </ol>
-                            </div>
+                            <Result />
                         </ListGroupItem>
                     </ListGroup>
                 </ModalBody>
