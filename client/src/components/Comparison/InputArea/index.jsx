@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Input } from 'reactstrap';
-import Panel from 'components/Compare/Panel';
+import ResultPanel from 'components/Comparison/ResultPanel';
 
-const Area = ({ str, change, showPanel }) => (
+const InputArea = ({ str, change, showPanel }) => (
     <Col xs="5">
         <Input
             type="textarea"
@@ -13,18 +13,18 @@ const Area = ({ str, change, showPanel }) => (
             value={str}
             onChange={change}
         />
-        {showPanel && <Panel />}
+        {showPanel && <ResultPanel />}
     </Col>
 );
 
-Area.propTypes = {
+InputArea.propTypes = {
     str: PropTypes.string,
     change: PropTypes.func,
     showPanel: PropTypes.bool,
 };
 
-Area.defaultProps = {
+InputArea.defaultProps = {
     showPanel: false,
 };
 
-export default Area;
+export default InputArea;

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
 
 import AppProvider from 'context/provider';
-import Compare from 'sections/Compare';
+import Comparison from 'sections/Comparison';
 import NotFound from 'sections/NotFound';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -18,7 +18,7 @@ const App = () => (
                 <Header />
                 <Container className="pt-4 pb-4 compare-container" fluid>
                     <Switch>
-                        <Route exact path="/" component={Compare} />
+                        <Route exact path="/" component={Comparison} />
                         <Route component={NotFound} />
                     </Switch>
                 </Container>

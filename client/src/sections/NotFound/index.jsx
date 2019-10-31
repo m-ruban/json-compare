@@ -3,7 +3,7 @@ import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import trl from 'modules/translation';
 
-const NotFound = () => (
+const Index = () => (
     <Row>
         <Col xs={12}>
             <h4>{trl('NotFound.title')}</h4>
@@ -14,4 +14,4 @@ const NotFound = () => (
     </Row>
 );
 
-export default NotFound;
+export default Index;
