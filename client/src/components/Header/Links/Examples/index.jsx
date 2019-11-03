@@ -6,6 +6,7 @@ import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
 import tool from 'modules/example/tool';
 import obj from 'modules/example/obj';
+import 'components/Header/Links/Examples/Examples.less';
 
 const Examples = ({ changeTool, changeObj }) => {
     const [isOpen, setOpen] = useState(false);
@@ -20,14 +21,17 @@ const Examples = ({ changeTool, changeObj }) => {
     }, [changeObj]);
 
     return (
-        <Dropdown isOpen={isOpen} toggle={toggle} nav>
-            <DropdownToggle nav caret>
+        <Dropdown className="examples" isOpen={isOpen} toggle={toggle} nav>
+            <DropdownToggle className="examples__toggle" nav caret>
                 {trl('Header.Links.Examples.title')}
             </DropdownToggle>
-            <DropdownMenu>
-                <DropdownItem onClick={onClickTool}>{trl('Header.Links.Examples.tool')}</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem onClick={onClickObj}>{trl('Header.Links.Examples.obj')}</DropdownItem>
+            <DropdownMenu className="bg-dark examples__dropdown">
+                <DropdownItem className="examples__dropdown-item" onClick={onClickTool}>
+                    {trl('Header.Links.Examples.tool')}
+                </DropdownItem>
+                <DropdownItem className="examples__dropdown-item" onClick={onClickObj}>
+                    {trl('Header.Links.Examples.obj')}
+                </DropdownItem>
             </DropdownMenu>
         </Dropdown>
     );

@@ -23,7 +23,7 @@ const AlertsPanel = ({ alerts }) => {
 
     return (
         <div className="pt-4 alerts">
-            <div className="alerts__items">
+            <div className="alerts__items bg-dark">
                 <Row>
                     <Col xs="6">
                         <Mark type="diff" text="!" pill />

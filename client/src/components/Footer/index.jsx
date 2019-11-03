@@ -8,7 +8,7 @@ import Log from 'components/Footer/Log';
 import 'components/Footer/Footer.less';
 
 const Footer = ({ author }) => (
-    <footer className="bg-light footer">
+    <footer className="footer">
         <Container className="footer__container" fluid>
             <Row>
                 <div className="footer__author text-muted py-3">

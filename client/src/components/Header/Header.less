@@ -1,6 +1,13 @@
+@import "~styles/variables.less";
+
 .header {
   flex-grow: 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid @border-color;
+  color: @secondary-color;
+
+  &__nav-bar {
+    background-color: @secondary-background-color;
+  }
 
   &__logo {
     width: 20px;

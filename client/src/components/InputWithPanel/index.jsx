@@ -13,7 +13,7 @@ const InputWithPanel = ({ str, change, showPanel }) => (
             type="textarea"
             name="text"
             className={classNames(
-                'json-input',
+                'json-input bg-dark',
                 { 'json-input_with-panel': showPanel },
                 { 'json-input_without-panel': !showPanel }
             )}

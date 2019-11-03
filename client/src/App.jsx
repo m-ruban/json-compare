@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => (
     <Router>
         <AppProvider>
-            <div className="json-compare">
+            <div className="json-compare bg-dark">
                 <Header />
                 <Container className="pt-4 pb-4 json-compare__container" fluid>
                     <Switch>

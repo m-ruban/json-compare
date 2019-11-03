@@ -11,7 +11,7 @@ import 'components/Header/Header.less';
 
 const Header = ({ isCompare }) => (
     <header className="header">
-        <Navbar color="light" expand="md" light>
+        <Navbar className="header__nav-bar" expand="md" light>
             <NavbarBrand>
                 JS
                 <img className="header__logo" src={Logo} alt="icon" />N

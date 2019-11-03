@@ -6,6 +6,7 @@ import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
 import Examples from 'components/Header/Links/Examples';
 import FAQ from 'components/Header/Links/FAQ';
+import 'components/Header/Links/Links.less';
 
 const Links = ({ feedback }) => {
     const [isOpen, setOpen] = useState(false);
@@ -20,12 +21,12 @@ const Links = ({ feedback }) => {
                 <Nav className="ml-auto" navbar>
                     <Examples />
                     <NavItem>
-                        <NavLink className="nav-link">
+                        <NavLink>
                             <FAQ />
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className="nav-link" href={feedback} target="_blank">
+                        <NavLink className="feedback" href={feedback} target="_blank">
                             {trl('Header.Links.feedback')}
                         </NavLink>
                     </NavItem>

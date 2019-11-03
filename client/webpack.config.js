@@ -29,6 +29,7 @@ module.exports = {
             modules: path.resolve(__dirname, 'src/modules'),
             hoc: path.resolve(__dirname, 'src/hoc'),
             context: path.resolve(__dirname, 'src/context'),
+            styles: path.resolve(__dirname, 'src/styles'),
         },
         extensions: ['.jsx', '.js', '.less', '.css', '.json', '.svg', '.gif', '.jpg'],
     },
