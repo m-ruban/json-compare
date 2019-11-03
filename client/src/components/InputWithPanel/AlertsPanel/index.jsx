@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { Col, Row, Badge } from 'reactstrap';
 
 import withConsumer from 'hoc/withConsumer';
+import trl from 'modules/translation';
 import { COMPARE_REQ } from 'constants/compare';
 
-const ResultPanel = ({ alerts }) => {
+const AlertsPanel = ({ alerts }) => {
     const nodesAlerts = [],
         nodesRequired = [];
 
@@ -25,16 +26,18 @@ const ResultPanel = ({ alerts }) => {
                     <Col xs="6">
                         <Badge color="diff" pill>
                             !
-                        </Badge>{' '}
-                        <b>Alerts</b>
+                        </Badge>
+                        &nbsp;
+                        <b>{trl('ResultPanel.alerts')}</b>
                         <br />
                         {nodesAlerts}
                     </Col>
                     <Col xs="6">
                         <Badge color="req" pill>
                             !
-                        </Badge>{' '}
-                        <b>Required</b>
+                        </Badge>
+                        &nbsp;
+                        <b>{trl('ResultPanel.required')}</b>
                         <br />
                         {nodesRequired}
                     </Col>
@@ -44,8 +47,8 @@ const ResultPanel = ({ alerts }) => {
     );
 };
 
-ResultPanel.propTypes = {
+AlertsPanel.propTypes = {
     alerts: PropTypes.object,
 };
 
-export default withConsumer(ResultPanel);
+export default withConsumer(AlertsPanel);

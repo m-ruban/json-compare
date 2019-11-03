@@ -1,20 +1,23 @@
-import React, { useCallback, useState } from 'react';
+import React, { Fragment, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
-import Icon from './Icon';
-import Body from './Body';
 
-const Brackets = ({ obj, lvl, path, showAlerts, showRequired }) => {
+import { BRACKET_ARRAY_CLOSE, BRACKET_ARRAY_OPEN, BRACKET_OBJECT_CLOSE, BRACKET_OBJECT_OPEN } from 'constants/compare';
+import Icon from 'components/JSONView/ObjView/CompositeView/Icon';
+import Value from 'components/JSONView/ObjView/CompositeView/Value';
+
+const ObjView = ({ obj, lvl, path, showAlerts, showRequired }) => {
+    const isArray = Array.isArray(obj);
     const [isOpen, setOpen] = useState(true);
     const toggle = useCallback(() => {
         setOpen(!isOpen);
     }, [isOpen]);
-    const isArray = Array.isArray(obj);
+
     return (
-        <>
+        <Fragment>
             <Icon isOpen={isOpen} toggle={toggle} />
-            {isArray ? '[' : '{'}
+            {isArray ? BRACKET_ARRAY_OPEN : BRACKET_OBJECT_OPEN}
             {isOpen ? (
-                <Body
+                <Value
                     isArray={isArray}
                     obj={obj}
                     path={path}
@@ -23,12 +26,12 @@ const Brackets = ({ obj, lvl, path, showAlerts, showRequired }) => {
                     showRequired={showRequired}
                 />
             ) : null}
-            {isArray ? ']' : '}'}
-        </>
+            {isArray ? BRACKET_ARRAY_CLOSE : BRACKET_OBJECT_CLOSE}
+        </Fragment>
     );
 };
 
-Brackets.propTypes = {
+ObjView.propTypes = {
     obj: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     lvl: PropTypes.number,
     path: PropTypes.array,
@@ -36,4 +39,4 @@ Brackets.propTypes = {
     showRequired: PropTypes.bool,
 };
 
-export default Brackets;
+export default ObjView;

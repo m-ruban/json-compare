@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Badge } from 'reactstrap';
 
@@ -7,7 +7,7 @@ const Key = ({ value, isArray }) => {
         return <Badge color="number">{value}</Badge>;
     }
 
-    return <>&quot;{value}&quot;</>;
+    return <Fragment>&quot;{value}&quot;</Fragment>;
 };
 
 Key.propTypes = {

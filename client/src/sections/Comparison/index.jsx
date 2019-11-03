@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row } from 'reactstrap';
-import Subject from 'components/Entities/Subject';
-import Instrument from 'components/Entities/Instrument';
+import Subject from 'components/Subject';
+import Instrument from 'components/Instrument';
 
 const Comparison = () => (
     <Row className="h100">

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
 
 import withConsumer from 'hoc/withConsumer';
-import ObjView from 'components/Comparison/ObjView';
-import InputArea from 'components/Comparison/InputArea';
+import JSONView from 'components/JSONView';
+import InputWithPanel from 'components/InputWithPanel';
 
 const Instrument = ({ isCompare, objStr, objObject, changeObj }) => {
     if (!isCompare) {
@@ -13,8 +13,8 @@ const Instrument = ({ isCompare, objStr, objObject, changeObj }) => {
     return (
         <Col xs="6">
             <Row className="h100">
-                <ObjView obj={objObject} showAlerts />
-                <InputArea str={objStr} change={changeObj} showPanel />
+                <JSONView obj={objObject} showAlerts />
+                <InputWithPanel str={objStr} change={changeObj} showPanel />
             </Row>
         </Col>
     );

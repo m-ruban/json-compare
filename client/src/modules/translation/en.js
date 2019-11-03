@@ -24,4 +24,7 @@ export default {
     'Header.Links.Examples.obj': 'Object Example',
     'Footer.text': 'Author - ',
     'Footer.name': 'wardak',
+    'Comparison.InputArea.placeholder': 'Insert JSON string',
+    'ResultPanel.alerts': 'Alerts',
+    'ResultPanel.required': 'Required',
 };

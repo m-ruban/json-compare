@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
 
 import withConsumer from 'hoc/withConsumer';
-import InputArea from 'components/Comparison/InputArea';
-import ObjView from 'components/Comparison/ObjView';
+import InputWithPanel from 'components/InputWithPanel';
+import JSONView from 'components/JSONView';
 
 const Subject = ({ toolStr, changeTool, toolObject, isCompare }) => (
     <Col xs={isCompare ? '6' : '12'}>
         <Row className="h100">
-            <InputArea str={toolStr} change={changeTool} />
-            <ObjView obj={toolObject} showRequired showAlerts />
+            <InputWithPanel str={toolStr} change={changeTool} />
+            <JSONView obj={toolObject} showRequired showAlerts />
         </Row>
     </Col>
 );
