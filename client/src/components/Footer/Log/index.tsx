@@ -1,9 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import withConsumer from 'hoc/withConsumer';
 import 'components/Footer/Log/Log.less';
 
-const Log = ({ log }) => {
+export interface LogProps {
+    log: { type: string; text: string };
+}
+
+const Log = ({ log }: LogProps) => {
     if (!log.type) {
         return null;
     }
@@ -17,13 +20,6 @@ const Log = ({ log }) => {
             </div>
         </div>
     );
-};
-
-Log.propTypes = {
-    log: PropTypes.shape({
-        type: PropTypes.string,
-        text: PropTypes.text,
-    }),
 };
 
 export default withConsumer(Log);

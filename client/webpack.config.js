@@ -11,6 +11,7 @@ const modeEnv = process.env.NODE_ENV === 'production' ? 'production' : 'developm
 module.exports = {
     entry: ['regenerator-runtime', entryPath],
     mode: modeEnv,
+    devtool: 'source-map',
     output: {
         filename: modeEnv === 'development' ? '[name].js' : '[name]-[chunkhash].js',
         path: outputPath,
@@ -31,10 +32,19 @@ module.exports = {
             context: path.resolve(__dirname, 'src/context'),
             styles: path.resolve(__dirname, 'src/styles'),
         },
-        extensions: ['.jsx', '.js', '.less', '.css', '.json', '.svg', '.gif', '.jpg'],
+        extensions: ['.ts', '.tsx', '.jsx', '.js', '.less', '.css', '.json', '.svg', '.gif', '.jpg'],
     },
     module: {
         rules: [
+            {
+                test: /\.ts(x?)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'ts-loader',
+                    },
+                ],
+            },
             {
                 test: /\.jsx?$/,
                 enforce: 'pre',
@@ -72,6 +82,11 @@ module.exports = {
                         loader: 'url-loader',
                     },
                 ],
+            },
+            {
+                enforce: 'pre',
+                test: /\.js$/,
+                loader: 'source-map-loader',
             },
         ],
     },
