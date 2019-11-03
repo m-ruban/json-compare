@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Badge } from 'reactstrap';
+import Mark from 'components/Mark';
 
 const Key = ({ value, isArray }) => {
     if (isArray) {
-        return <Badge color="number">{value}</Badge>;
+        return <Mark type="number" text={value} />;
     }
 
     return <Fragment>&quot;{value}&quot;</Fragment>;

@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'reactstrap';
 import ObjView from 'components/JSONView/ObjView';
+import 'components/JSONView/JSONView.less';
 
 const JSONView = ({ obj, showAlerts, showRequired }) => (
     <Col xs="7">
-        <div className="json result without-panel">
+        <div className="json-view">
             <ObjView value={obj} showAlerts={showAlerts} showRequired={showRequired} lvl={1} />
         </div>
     </Col>

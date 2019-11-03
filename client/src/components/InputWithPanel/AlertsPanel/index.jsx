@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col, Row, Badge } from 'reactstrap';
+import { Col, Row } from 'reactstrap';
 
 import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
 import { COMPARE_REQ } from 'constants/compare';
+import Mark from 'components/Mark';
+import 'components/InputWithPanel/AlertsPanel/AlertsPanel.less';
 
 const AlertsPanel = ({ alerts }) => {
     const nodesAlerts = [],
@@ -20,22 +22,18 @@ const AlertsPanel = ({ alerts }) => {
     });
 
     return (
-        <div className="pt-4 panel">
-            <div className="body">
+        <div className="pt-4 alerts">
+            <div className="alerts__items">
                 <Row>
                     <Col xs="6">
-                        <Badge color="diff" pill>
-                            !
-                        </Badge>
+                        <Mark type="diff" text="!" pill />
                         &nbsp;
                         <b>{trl('ResultPanel.alerts')}</b>
                         <br />
                         {nodesAlerts}
                     </Col>
                     <Col xs="6">
-                        <Badge color="req" pill>
-                            !
-                        </Badge>
+                        <Mark type="req" text="!" pill />
                         &nbsp;
                         <b>{trl('ResultPanel.required')}</b>
                         <br />

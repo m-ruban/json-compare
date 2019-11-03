@@ -1,9 +1,16 @@
 import React, { Fragment, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { BRACKET_ARRAY_CLOSE, BRACKET_ARRAY_OPEN, BRACKET_OBJECT_CLOSE, BRACKET_OBJECT_OPEN } from 'constants/compare';
-import Icon from 'components/JSONView/ObjView/CompositeView/Icon';
+import {
+    BRACKET_ARRAY_CLOSE,
+    BRACKET_ARRAY_OPEN,
+    BRACKET_OBJECT_CLOSE,
+    BRACKET_OBJECT_OPEN,
+    CLOSE_ICON,
+    OPEN_ICON,
+} from 'constants/compare';
 import Value from 'components/JSONView/ObjView/CompositeView/Value';
+import Mark from 'components/Mark';
 
 const ObjView = ({ obj, lvl, path, showAlerts, showRequired }) => {
     const isArray = Array.isArray(obj);
@@ -14,7 +21,7 @@ const ObjView = ({ obj, lvl, path, showAlerts, showRequired }) => {
 
     return (
         <Fragment>
-            <Icon isOpen={isOpen} toggle={toggle} />
+            <Mark type="switch" text={isOpen ? OPEN_ICON : CLOSE_ICON} onClick={toggle} />
             {isArray ? BRACKET_ARRAY_OPEN : BRACKET_OBJECT_OPEN}
             {isOpen ? (
                 <Value

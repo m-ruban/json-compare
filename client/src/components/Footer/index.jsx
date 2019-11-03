@@ -4,19 +4,20 @@ import { Row, Container } from 'reactstrap';
 
 import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
-import Logs from 'components/Footer/Logs';
+import Log from 'components/Footer/Log';
+import 'components/Footer/Footer.less';
 
 const Footer = ({ author }) => (
-    <footer className="bg-light">
-        <Container fluid>
+    <footer className="bg-light footer">
+        <Container className="footer__container" fluid>
             <Row>
-                <div className="body text-muted py-3">
+                <div className="footer__author text-muted py-3">
                     {trl('Footer.text')}
-                    <a target="_blank" href={author} rel="noopener noreferrer">
+                    <a className="footer__link" target="_blank" href={author} rel="noopener noreferrer">
                         {trl('Footer.name')}
                     </a>
                 </div>
-                <Logs />
+                <Log />
             </Row>
         </Container>
     </footer>

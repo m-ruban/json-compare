@@ -5,6 +5,7 @@ import { Col, Row } from 'reactstrap';
 import withConsumer from 'hoc/withConsumer';
 import JSONView from 'components/JSONView';
 import InputWithPanel from 'components/InputWithPanel';
+import 'components/Instrument/Instrument.less';
 
 const Instrument = ({ isCompare, objStr, objObject, changeObj }) => {
     if (!isCompare) {
@@ -12,7 +13,7 @@ const Instrument = ({ isCompare, objStr, objObject, changeObj }) => {
     }
     return (
         <Col xs="6">
-            <Row className="h100">
+            <Row className="instrument">
                 <JSONView obj={objObject} showAlerts />
                 <InputWithPanel str={objStr} change={changeObj} showPanel />
             </Row>

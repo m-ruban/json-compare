@@ -5,10 +5,11 @@ import { Col, Row } from 'reactstrap';
 import withConsumer from 'hoc/withConsumer';
 import InputWithPanel from 'components/InputWithPanel';
 import JSONView from 'components/JSONView';
+import 'components/Subject/Subject.less';
 
 const Subject = ({ toolStr, changeTool, toolObject, isCompare }) => (
     <Col xs={isCompare ? '6' : '12'}>
-        <Row className="h100">
+        <Row className="subject">
             <InputWithPanel str={toolStr} change={changeTool} />
             <JSONView obj={toolObject} showRequired showAlerts />
         </Row>

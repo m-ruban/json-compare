@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Badge } from 'reactstrap';
 import { COMPARE_REQ, COMPARE_DIFF } from 'constants/compare';
+import Mark from 'components/Mark';
 
 const Alert = ({ alert, showAlerts, showRequired }) => {
     let node = null;
@@ -11,11 +11,7 @@ const Alert = ({ alert, showAlerts, showRequired }) => {
         if (showRequired && !show) show = alert.res === COMPARE_REQ;
 
         if (show) {
-            node = (
-                <Badge color={alert.res} pill>
-                    !
-                </Badge>
-            );
+            node = <Mark type={alert.res} text="!" pill />;
         }
     }
 

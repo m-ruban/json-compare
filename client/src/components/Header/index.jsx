@@ -10,11 +10,11 @@ import Logo from 'components/Header/Icon.png';
 import 'components/Header/Header.less';
 
 const Header = ({ isCompare }) => (
-    <header className="compare-header">
+    <header className="header">
         <Navbar color="light" expand="md" light>
             <NavbarBrand>
                 JS
-                <img src={Logo} alt="icon" />N
+                <img className="header__logo" src={Logo} alt="icon" />N
             </NavbarBrand>
             <Switch />
             {isCompare && <EqualityTypes />}

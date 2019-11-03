@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
+import 'components/Header/Switch/Switch.less';
 
 const Switch = ({ isCompare, toggleCompare }) => {
     const onParseClick = useCallback(() => {
@@ -21,11 +22,17 @@ const Switch = ({ isCompare, toggleCompare }) => {
 
     return (
         <Fragment>
-            <span className={classNames('parse', { pointer: isCompare })} onClick={onParseClick}>
+            <span
+                className={classNames('switch', 'switch_parse', { switch_pointer: isCompare })}
+                onClick={onParseClick}
+            >
                 {trl('Header.Switch.parse')}
             </span>
-            <span className="divider">{trl('Header.Switch.and')}</span>
-            <span className={classNames('compare', { pointer: !isCompare })} onClick={onCompareClick}>
+            <span className="switch__divider">{trl('Header.Switch.and')}</span>
+            <span
+                className={classNames('switch', 'switch_compare', { switch_pointer: !isCompare })}
+                onClick={onCompareClick}
+            >
                 {trl('Header.Switch.compare')}
             </span>
         </Fragment>

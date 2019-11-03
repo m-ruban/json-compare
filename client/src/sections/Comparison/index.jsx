@@ -2,9 +2,10 @@ import React from 'react';
 import { Row } from 'reactstrap';
 import Subject from 'components/Subject';
 import Instrument from 'components/Instrument';
+import 'sections/Comparison/Comparison.less';
 
 const Comparison = () => (
-    <Row className="h100">
+    <Row className="comparison">
         <Subject />
         <Instrument />
     </Row>

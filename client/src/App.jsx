@@ -16,7 +16,7 @@ const App = () => (
         <AppProvider>
             <div className="json-compare">
                 <Header />
-                <Container className="pt-4 pb-4 compare-container" fluid>
+                <Container className="pt-4 pb-4 json-compare__container" fluid>
                     <Switch>
                         <Route exact path="/" component={Comparison} />
                         <Route component={NotFound} />

@@ -5,13 +5,18 @@ import classNames from 'classnames';
 
 import trl from 'modules/translation';
 import AlertsPanel from 'components/InputWithPanel/AlertsPanel';
+import 'components/InputWithPanel/InputWithPanel.less';
 
 const InputWithPanel = ({ str, change, showPanel }) => (
     <Col xs="5">
         <Input
             type="textarea"
             name="text"
-            className={classNames('json', { 'with-panel': showPanel }, { 'without-panel': !showPanel })}
+            className={classNames(
+                'json-input',
+                { 'json-input_with-panel': showPanel },
+                { 'json-input_without-panel': !showPanel }
+            )}
             placeholder={trl('Comparison.InputArea.placeholder')}
             value={str}
             onChange={change}

@@ -7,7 +7,6 @@ import {
     ModalFooter,
     ListGroupItem,
     ListGroupItemHeading,
-    ListGroupItemText,
     ListGroup,
 } from 'reactstrap';
 
@@ -33,7 +32,7 @@ const FAQ = () => {
                     <ListGroup>
                         <ListGroupItem>
                             <ListGroupItemHeading>{trl('FAQ.ForWhat.question')}</ListGroupItemHeading>
-                            <ListGroupItemText>{trl('FAQ.ForWhat.answer')}</ListGroupItemText>
+                            <div>{trl('FAQ.ForWhat.answer')}</div>
                         </ListGroupItem>
                         <ListGroupItem>
                             <ListGroupItemHeading>{trl('FAQ.ComparisonTypes.question')}</ListGroupItemHeading>
