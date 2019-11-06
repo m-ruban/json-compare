@@ -1,19 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
 
+import 'components/InputWithPanel/AlertsPanel/AlertsPanel.less';
+import Mark from 'components/Mark';
+import { COMPARE_REQ } from 'constants/compare';
 import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
-import { COMPARE_REQ } from 'constants/compare';
-import Mark from 'components/Mark';
-import 'components/InputWithPanel/AlertsPanel/AlertsPanel.less';
 
-const AlertsPanel = ({ alerts }) => {
-    const nodesAlerts = [],
-        nodesRequired = [];
+interface IAlert {
+    res: string;
+    scalar: boolean;
+}
+
+interface IAlertsPanelProps {
+    alerts: Map<string, IAlert>;
+}
+
+const AlertsPanel = ({ alerts }: IAlertsPanelProps) => {
+    const nodesAlerts = [];
+    const nodesRequired = [];
 
     alerts.forEach((alert, path) => {
-        if (!alert.scalar) return;
+        if (!alert.scalar) {
+            return;
+        }
         if (alert.res === COMPARE_REQ) {
             nodesRequired.push(<div key={path}>{path}</div>);
         } else {
@@ -43,10 +53,6 @@ const AlertsPanel = ({ alerts }) => {
             </div>
         </div>
     );
-};
-
-AlertsPanel.propTypes = {
-    alerts: PropTypes.object,
 };
 
 export default withConsumer(AlertsPanel);

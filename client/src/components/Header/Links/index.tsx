@@ -1,21 +1,24 @@
-import React, { useCallback, useState, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import { Nav, NavItem, Collapse, NavLink, NavbarToggler } from 'reactstrap';
+import * as React from 'react';
+import { Collapse, Nav, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 
-import withConsumer from 'hoc/withConsumer';
-import trl from 'modules/translation';
 import Examples from 'components/Header/Links/Examples';
 import FAQ from 'components/Header/Links/FAQ';
 import 'components/Header/Links/Links.less';
+import withConsumer from 'hoc/withConsumer';
+import trl from 'modules/translation';
 
-const Links = ({ feedback }) => {
-    const [isOpen, setOpen] = useState(false);
-    const toggle = useCallback(() => {
+interface ILinksProps {
+    feedback: string;
+}
+
+const Links = ({ feedback }: ILinksProps) => {
+    const [isOpen, setOpen] = React.useState(false);
+    const toggle = React.useCallback(() => {
         setOpen(!isOpen);
     }, [isOpen]);
 
     return (
-        <Fragment>
+        <>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
@@ -32,12 +35,8 @@ const Links = ({ feedback }) => {
                     </NavItem>
                 </Nav>
             </Collapse>
-        </Fragment>
+        </>
     );
-};
-
-Links.propTypes = {
-    feedback: PropTypes.string,
 };
 
 export default withConsumer(Links);

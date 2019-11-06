@@ -1,12 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FormGroup, Input, Form } from 'reactstrap';
+import * as React from 'react';
+import { Form, FormGroup, Input } from 'reactstrap';
 
-import withConsumer from 'hoc/withConsumer';
-import { EQUALITY_TYPE_STRICT, EQUALITY_TYPE_NOT_STRICT, EQUALITY_TYPE_IGNORE } from 'constants/equality';
 import 'components/Header/EqualityTypes/EqualityTypes.less';
+import { EQUALITY_TYPE_IGNORE, EQUALITY_TYPE_NOT_STRICT, EQUALITY_TYPE_STRICT } from 'constants/equality';
+import withConsumer from 'hoc/withConsumer';
 
-const EqualityTypes = ({ equalityTypes, changeEqualityTypes }) => (
+interface IEqualityTypesProps {
+    equalityTypes: string;
+    changeEqualityTypes: (event: React.SyntheticEvent) => void;
+}
+
+const EqualityTypes = ({ equalityTypes, changeEqualityTypes }: IEqualityTypesProps) => (
     <Form className="settings" inline>
         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
             <Input
@@ -23,10 +27,5 @@ const EqualityTypes = ({ equalityTypes, changeEqualityTypes }) => (
         </FormGroup>
     </Form>
 );
-
-EqualityTypes.propTypes = {
-    equalityTypes: PropTypes.string,
-    changeEqualityTypes: PropTypes.func,
-};
 
 export default withConsumer(EqualityTypes);

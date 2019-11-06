@@ -1,22 +1,26 @@
-import React, { useState, useCallback } from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 
-import withConsumer from 'hoc/withConsumer';
-import trl from 'modules/translation';
-import tool from 'modules/example/tool';
-import obj from 'modules/example/obj';
 import 'components/Header/Links/Examples/Examples.less';
+import withConsumer from 'hoc/withConsumer';
+import obj from 'modules/example/obj';
+import tool from 'modules/example/tool';
+import trl from 'modules/translation';
 
-const Examples = ({ changeTool, changeObj }) => {
-    const [isOpen, setOpen] = useState(false);
-    const toggle = useCallback(() => {
+interface IExamplesProps {
+    changeTool: (event: React.SyntheticEvent) => void;
+    changeObj: (event: React.SyntheticEvent) => void;
+}
+
+const Examples = ({ changeTool, changeObj }: IExamplesProps) => {
+    const [isOpen, setOpen] = React.useState(false);
+    const toggle = React.useCallback(() => {
         setOpen(!isOpen);
     }, [isOpen]);
-    const onClickTool = useCallback(() => {
+    const onClickTool = React.useCallback(() => {
         changeTool(tool);
     }, [changeTool]);
-    const onClickObj = useCallback(() => {
+    const onClickObj = React.useCallback(() => {
         changeObj(obj);
     }, [changeObj]);
 
@@ -35,11 +39,6 @@ const Examples = ({ changeTool, changeObj }) => {
             </DropdownMenu>
         </Dropdown>
     );
-};
-
-Examples.propTypes = {
-    changeTool: PropTypes.func,
-    changeObj: PropTypes.func,
 };
 
 export default withConsumer(Examples);

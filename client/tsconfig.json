@@ -8,11 +8,14 @@
     "target": "es6",
     "jsx": "react",
     "moduleResolution": "node",
+    "typeRoots" : ["./typings"],
+    "esModuleInterop": true,
     "paths": {
       "root/*": ["./src/*"],
       "hoc/*": ["./src/hoc/*"],
       "modules/*": ["./src/modules/*"],
-      "components/*": ["./src/components/*"]
+      "components/*": ["./src/components/*"],
+      "constants/*": ["./src/constants/*"]
     }
   }
 }

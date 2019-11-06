@@ -1,12 +1,13 @@
 import * as React from 'react';
-import withConsumer from 'hoc/withConsumer';
-import 'components/Footer/Log/Log.less';
 
-export interface LogProps {
+import 'components/Footer/Log/Log.less';
+import withConsumer from 'hoc/withConsumer';
+
+interface ILogProps {
     log: { type: string; text: string };
 }
 
-const Log = ({ log }: LogProps) => {
+const Log = ({ log }: ILogProps) => {
     if (!log.type) {
         return null;
     }

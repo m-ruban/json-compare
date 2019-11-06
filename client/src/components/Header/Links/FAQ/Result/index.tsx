@@ -1,6 +1,7 @@
 import React from 'react';
-import trl from 'modules/translation';
+
 import Mark from 'components/Mark';
+import trl from 'modules/translation';
 
 const Result = () => (
     <div>

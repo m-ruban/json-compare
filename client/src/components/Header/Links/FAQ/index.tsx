@@ -1,28 +1,28 @@
-import React, { useState, useCallback, Fragment } from 'react';
+import React from 'react';
 import {
     Button,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    ModalFooter,
+    ListGroup,
     ListGroupItem,
     ListGroupItemHeading,
-    ListGroup,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader,
 } from 'reactstrap';
 
-import trl from 'modules/translation';
-import Types from 'components/Header/Links/FAQ/Types';
-import Result from 'components/Header/Links/FAQ/Result';
 import 'components/Header/Links/FAQ/FAQ.less';
+import Result from 'components/Header/Links/FAQ/Result';
+import Types from 'components/Header/Links/FAQ/Types';
+import trl from 'modules/translation';
 
 const FAQ = () => {
-    const [modal, setModal] = useState(false);
-    const toggle = useCallback(() => {
+    const [modal, setModal] = React.useState(false);
+    const toggle = React.useCallback(() => {
         setModal(!modal);
     }, [modal]);
 
     return (
-        <Fragment>
+        <>
             <span className="faq-link" onClick={toggle}>
                 {trl('Header.Links.FAQ.title')}
             </span>
@@ -50,7 +50,7 @@ const FAQ = () => {
                     </Button>
                 </ModalFooter>
             </Modal>
-        </Fragment>
+        </>
     );
 };
 

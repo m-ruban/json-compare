@@ -1,15 +1,18 @@
-import React from 'react';
+import * as React from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
-import PropTypes from 'prop-types';
 
-import withConsumer from 'hoc/withConsumer';
 import EqualityTypes from 'components/Header/EqualityTypes';
-import Switch from 'components/Header/Switch';
-import Links from 'components/Header/Links';
-import Logo from 'components/Header/Icon.png';
 import 'components/Header/Header.less';
+import Logo from 'components/Header/Icon.png';
+import Links from 'components/Header/Links';
+import Switch from 'components/Header/Switch';
+import withConsumer from 'hoc/withConsumer';
 
-const Header = ({ isCompare }) => (
+interface IHeaderProps {
+    isCompare: string;
+}
+
+const Header = ({ isCompare }: IHeaderProps) => (
     <header className="header">
         <Navbar className="header__nav-bar" expand="md" light>
             <NavbarBrand>
@@ -22,9 +25,5 @@ const Header = ({ isCompare }) => (
         </Navbar>
     </header>
 );
-
-Header.propTypes = {
-    isCompare: PropTypes.bool,
-};
 
 export default withConsumer(Header);

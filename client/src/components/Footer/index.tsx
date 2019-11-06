@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { Row, Container } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 
+import 'components/Footer/Footer.less';
+import Log from 'components/Footer/Log';
 import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
-import Log from 'components/Footer/Log';
-import 'components/Footer/Footer.less';
 
-export interface FooterProps {
+interface IFooterProps {
     author: string;
 }
 
-const Footer = ({ author }: FooterProps) => (
+const Footer = ({ author }: IFooterProps) => (
     <footer className="footer">
         <Container className="footer__container" fluid>
             <Row>

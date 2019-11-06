@@ -1,6 +1,7 @@
 import React from 'react';
-import trl from 'modules/translation';
+
 import { EQUALITY_TYPE_IGNORE, EQUALITY_TYPE_NOT_STRICT, EQUALITY_TYPE_STRICT } from 'constants/equality';
+import trl from 'modules/translation';
 
 const Types = () => (
     <div>
