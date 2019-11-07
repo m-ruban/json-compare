@@ -1,13 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
 
-import withConsumer from 'hoc/withConsumer';
 import InputWithPanel from 'components/InputWithPanel';
 import JSONView from 'components/JSONView';
+import withConsumer from 'hoc/withConsumer';
+
 import 'components/Subject/Subject.less';
 
-const Subject = ({ toolStr, changeTool, toolObject, isCompare }) => (
+interface ISubjectProps {
+    isCompare: boolean;
+    toolStr: string;
+    toolObject: object;
+    changeTool: (event: React.SyntheticEvent) => void;
+}
+
+const Subject = ({ toolStr, changeTool, toolObject, isCompare }: ISubjectProps) => (
     <Col xs={isCompare ? '6' : '12'}>
         <Row className="subject">
             <InputWithPanel str={toolStr} change={changeTool} />
@@ -15,12 +22,5 @@ const Subject = ({ toolStr, changeTool, toolObject, isCompare }) => (
         </Row>
     </Col>
 );
-
-Subject.propTypes = {
-    toolStr: PropTypes.string,
-    changeTool: PropTypes.func,
-    toolObject: PropTypes.object,
-    isCompare: PropTypes.bool,
-};
 
 export default withConsumer(Subject);

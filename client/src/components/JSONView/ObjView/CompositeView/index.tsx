@@ -1,6 +1,7 @@
-import React, { Fragment, useCallback, useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
+import Value from 'components/JSONView/ObjView/CompositeView/Value';
+import Mark from 'components/Mark';
 import {
     BRACKET_ARRAY_CLOSE,
     BRACKET_ARRAY_OPEN,
@@ -9,18 +10,24 @@ import {
     CLOSE_ICON,
     OPEN_ICON,
 } from 'constants/compare';
-import Value from 'components/JSONView/ObjView/CompositeView/Value';
-import Mark from 'components/Mark';
 
-const ObjView = ({ obj, lvl, path, showAlerts, showRequired }) => {
+interface ICompositeViewProps {
+    obj: any[] | object;
+    lvl: number;
+    path: string[];
+    showAlerts: boolean;
+    showRequired: boolean;
+}
+
+const CompositeView = ({ obj, lvl, path, showAlerts, showRequired }: ICompositeViewProps) => {
     const isArray = Array.isArray(obj);
-    const [isOpen, setOpen] = useState(true);
-    const toggle = useCallback(() => {
+    const [isOpen, setOpen] = React.useState(true);
+    const toggle = React.useCallback(() => {
         setOpen(!isOpen);
     }, [isOpen]);
 
     return (
-        <Fragment>
+        <>
             <Mark type="switch" text={isOpen ? OPEN_ICON : CLOSE_ICON} onClick={toggle} />
             {isArray ? BRACKET_ARRAY_OPEN : BRACKET_OBJECT_OPEN}
             {isOpen ? (
@@ -34,16 +41,8 @@ const ObjView = ({ obj, lvl, path, showAlerts, showRequired }) => {
                 />
             ) : null}
             {isArray ? BRACKET_ARRAY_CLOSE : BRACKET_OBJECT_CLOSE}
-        </Fragment>
+        </>
     );
 };
 
-ObjView.propTypes = {
-    obj: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-    lvl: PropTypes.number,
-    path: PropTypes.array,
-    showAlerts: PropTypes.bool,
-    showRequired: PropTypes.bool,
-};
-
-export default ObjView;
+export default CompositeView;

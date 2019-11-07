@@ -1,11 +1,12 @@
-import * as React from 'react';
+import React from 'react';
 import { Collapse, Nav, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 
 import Examples from 'components/Header/Links/Examples';
 import FAQ from 'components/Header/Links/FAQ';
-import 'components/Header/Links/Links.less';
 import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
+
+import 'components/Header/Links/Links.less';
 
 interface ILinksProps {
     feedback: string;

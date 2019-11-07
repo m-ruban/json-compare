@@ -1,11 +1,20 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+
 import ObjView from 'components/JSONView/ObjView';
 import Key from 'components/JSONView/ObjView/CompositeView/Value/Key';
 import Type from 'components/JSONView/ObjView/CompositeView/Value/Type';
 
-const Value = ({ obj, lvl, path, showAlerts, showRequired, isArray }) => (
-    <Fragment>
+interface IValue {
+    obj: any[] | object;
+    lvl: number;
+    path: string[];
+    showAlerts: boolean;
+    showRequired: boolean;
+    isArray: boolean;
+}
+
+const Value = ({ obj, lvl, path, showAlerts, showRequired, isArray }: IValue) => (
+    <>
         {Object.entries(obj).map(([key, value]) => {
             const newPath = path.slice();
             const margin = `${lvl * 6}px`;
@@ -27,16 +36,7 @@ const Value = ({ obj, lvl, path, showAlerts, showRequired, isArray }) => (
                 </div>
             );
         })}
-    </Fragment>
+    </>
 );
-
-Value.propTypes = {
-    obj: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-    lvl: PropTypes.number,
-    path: PropTypes.array,
-    showAlerts: PropTypes.bool,
-    showRequired: PropTypes.bool,
-    isArray: PropTypes.bool,
-};
 
 export default Value;

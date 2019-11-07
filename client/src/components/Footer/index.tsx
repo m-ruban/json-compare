@@ -1,10 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import { Container, Row } from 'reactstrap';
 
-import 'components/Footer/Footer.less';
 import Log from 'components/Footer/Log';
 import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
+
+import 'components/Footer/Footer.less';
 
 interface IFooterProps {
     author: string;

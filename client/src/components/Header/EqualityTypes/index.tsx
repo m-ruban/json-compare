@@ -1,9 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import { Form, FormGroup, Input } from 'reactstrap';
 
-import 'components/Header/EqualityTypes/EqualityTypes.less';
 import { EQUALITY_TYPE_IGNORE, EQUALITY_TYPE_NOT_STRICT, EQUALITY_TYPE_STRICT } from 'constants/equality';
 import withConsumer from 'hoc/withConsumer';
+
+import 'components/Header/EqualityTypes/EqualityTypes.less';
 
 interface IEqualityTypesProps {
     equalityTypes: string;

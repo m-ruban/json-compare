@@ -1,11 +1,12 @@
 import React from 'react';
 import { Col, Row } from 'reactstrap';
 
-import 'components/InputWithPanel/AlertsPanel/AlertsPanel.less';
 import Mark from 'components/Mark';
 import { COMPARE_REQ } from 'constants/compare';
 import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
+
+import 'components/InputWithPanel/AlertsPanel/AlertsPanel.less';
 
 interface IAlert {
     res: string;

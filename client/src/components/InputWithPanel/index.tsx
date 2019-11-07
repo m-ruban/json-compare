@@ -4,8 +4,9 @@ import classNames from 'classnames';
 import { Col, Input } from 'reactstrap';
 
 import AlertsPanel from 'components/InputWithPanel/AlertsPanel';
-import 'components/InputWithPanel/InputWithPanel.less';
 import trl from 'modules/translation';
+
+import 'components/InputWithPanel/InputWithPanel.less';
 
 interface IInputWithPanelProps {
     str: string;

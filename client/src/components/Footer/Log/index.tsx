@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React from 'react';
+
+import withConsumer from 'hoc/withConsumer';
 
 import 'components/Footer/Log/Log.less';
-import withConsumer from 'hoc/withConsumer';
 
 interface ILogProps {
     log: { type: string; text: string };

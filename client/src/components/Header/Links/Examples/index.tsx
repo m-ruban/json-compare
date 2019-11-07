@@ -1,11 +1,12 @@
-import * as React from 'react';
+import React from 'react';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
 
-import 'components/Header/Links/Examples/Examples.less';
 import withConsumer from 'hoc/withConsumer';
 import obj from 'modules/example/obj';
 import tool from 'modules/example/tool';
 import trl from 'modules/translation';
+
+import 'components/Header/Links/Examples/Examples.less';
 
 interface IExamplesProps {
     changeTool: (event: React.SyntheticEvent) => void;

@@ -1,13 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
 
-import withConsumer from 'hoc/withConsumer';
-import JSONView from 'components/JSONView';
 import InputWithPanel from 'components/InputWithPanel';
+import JSONView from 'components/JSONView';
+import withConsumer from 'hoc/withConsumer';
+
 import 'components/Instrument/Instrument.less';
 
-const Instrument = ({ isCompare, objStr, objObject, changeObj }) => {
+interface IInstrumentProps {
+    isCompare: boolean;
+    objStr: string;
+    objObject: object;
+    changeObj: (event: React.SyntheticEvent) => void;
+}
+
+const Instrument = ({ isCompare, objStr, objObject, changeObj }: IInstrumentProps) => {
     if (!isCompare) {
         return null;
     }
@@ -19,13 +26,6 @@ const Instrument = ({ isCompare, objStr, objObject, changeObj }) => {
             </Row>
         </Col>
     );
-};
-
-Instrument.propTypes = {
-    isCompare: PropTypes.bool,
-    objStr: PropTypes.string,
-    objObject: PropTypes.object,
-    changeObj: PropTypes.func,
 };
 
 export default withConsumer(Instrument);

@@ -1,9 +1,10 @@
 import classNames from 'classnames';
 import React from 'react';
 
-import 'components/Header/Switch/Switch.less';
 import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
+
+import 'components/Header/Switch/Switch.less';
 
 interface ISwitchProps {
     isCompare: boolean;
