@@ -29,7 +29,7 @@ module.exports = {
             components: path.resolve(__dirname, 'src/components'),
             modules: path.resolve(__dirname, 'src/modules'),
             hoc: path.resolve(__dirname, 'src/hoc'),
-            context: path.resolve(__dirname, 'src/context'),
+            store: path.resolve(__dirname, 'src/store'),
             styles: path.resolve(__dirname, 'src/styles'),
         },
         extensions: ['.ts', '.tsx', '.jsx', '.js', '.less', '.css', '.json', '.svg', '.gif', '.jpg'],
