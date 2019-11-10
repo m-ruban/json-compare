@@ -9,8 +9,8 @@ import trl from 'modules/translation';
 import 'components/Header/Links/Examples/Examples.less';
 
 interface IExamplesProps {
-    changeTool: (event: React.SyntheticEvent) => void;
-    changeObj: (event: React.SyntheticEvent) => void;
+    changeTool: (value: string) => void;
+    changeObj: (value: string) => void;
 }
 
 const Examples = ({ changeTool, changeObj }: IExamplesProps) => {

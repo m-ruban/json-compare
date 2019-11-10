@@ -11,10 +11,13 @@ interface IInstrumentProps {
     isCompare: boolean;
     objStr: string;
     objObject: object;
-    changeObj: (event: React.SyntheticEvent) => void;
+    changeObj: (value: string) => void;
 }
 
 const Instrument = ({ isCompare, objStr, objObject, changeObj }: IInstrumentProps) => {
+    const onChangeValue = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+        changeObj(event.target.value);
+    }, [changeObj]);
     if (!isCompare) {
         return null;
     }
@@ -22,7 +25,7 @@ const Instrument = ({ isCompare, objStr, objObject, changeObj }: IInstrumentProp
         <Col xs="6">
             <Row className="instrument">
                 <JSONView obj={objObject} showAlerts />
-                <InputWithPanel str={objStr} change={changeObj} showPanel />
+                <InputWithPanel str={objStr} change={onChangeValue} showPanel />
             </Row>
         </Col>
     );

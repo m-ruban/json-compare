@@ -18,7 +18,7 @@ interface IProviderState {
     author: string;
     changeEqualityTypes: (event: React.SyntheticEvent) => void;
     changeObj: (event: React.SyntheticEvent) => void;
-    changeTool: (event: React.SyntheticEvent) => void;
+    changeTool: (value: string) => void;
     equalityTypes: string;
     feedback: string;
     isCompare: boolean;
@@ -66,23 +66,16 @@ class AppProvider extends React.Component<IProviderProps, IProviderState> {
             text: 'change equality types',
             type: LOG_INFO,
         };
-
         this.setState({ equalityTypes: value, log }, this.changeAlerts);
     }
 
-    public changeTool(event) {
-        const { value } = event.target;
-        const result = parseAndLog(value);
-        const { obj, log } = result;
-
+    public changeTool(value: string) {
+        const { obj, log } = parseAndLog(value);
         this.setState({ toolObject: obj, toolStr: value, log }, this.changeAlerts);
     }
 
-    public changeObj(event) {
-        const { value } = event.target;
-        const result = parseAndLog(value);
-        const { obj, log } = result;
-
+    public changeObj(value: string) {
+        const { obj, log } = parseAndLog(value);
         this.setState({ objObject: obj, objStr: value, log }, this.changeAlerts);
     }
 

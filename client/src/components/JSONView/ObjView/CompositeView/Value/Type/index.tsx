@@ -8,7 +8,7 @@ interface IType {
 }
 
 const Type = ({ value }: IType) => {
-    const type = getType(value);
+    const type: string = getType(value);
     return <Mark type={type} text={type} />;
 };
 
