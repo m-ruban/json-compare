@@ -1,18 +1,14 @@
+import { ILog } from 'constants/interfaces';
 import React from 'react';
 
 import withConsumer from 'hoc/withConsumer';
 
 import 'components/Footer/Log/Log.less';
 
-interface ILogProps {
-    log: { type: string; text: string };
-}
-
-const Log = ({ log }: ILogProps) => {
+const Log = ({ log }: { log: ILog }) => {
     if (!log.type) {
         return null;
     }
-
     return (
         <div className="log pr-3 py-3">
             <div className="log__item">

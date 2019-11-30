@@ -5,13 +5,7 @@ import { Col } from 'reactstrap';
 
 import 'components/JSONView/JSONView.less';
 
-interface IJSONViewProps {
-    obj: object;
-    showAlerts: boolean;
-    showRequired: boolean;
-}
-
-const JSONView = ({ obj, showAlerts, showRequired }: IJSONViewProps) => (
+const JSONView = ({ obj, showAlerts, showRequired }: { obj: object; showAlerts: boolean; showRequired: boolean; }) => (
     <Col xs="7">
         <div className="json-view bg-dark">
             <ObjView value={obj} showAlerts={showAlerts} showRequired={showRequired} lvl={1} />

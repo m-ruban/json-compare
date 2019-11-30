@@ -1,20 +1,15 @@
 import React, { Fragment } from 'react';
 
 import Alert from 'components/JSONView/ObjView/PrimitiveType/Alert';
+import { IAlertMap } from 'constants/interfaces';
 import { STRING_TYPE } from 'constants/types';
 import withConsumer from 'hoc/withConsumer';
 
-interface IAlert {
-    res: string;
-    scalar: boolean;
-}
-
-interface IPrimitiveTypeProps {
+interface IPrimitiveTypeProps extends IAlertMap {
     value: boolean | string | number;
     showAlerts: boolean;
     showRequired: boolean;
     path: string[];
-    alerts: Map<string, IAlert>;
 }
 
 const PrimitiveType = ({ value, showAlerts, showRequired, path, alerts }: IPrimitiveTypeProps) => {

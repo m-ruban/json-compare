@@ -2,12 +2,7 @@ import React from 'react';
 
 import Mark from 'components/Mark';
 
-interface IKey {
-    value: string;
-    isArray: boolean;
-}
-
-const Key = ({ value, isArray }: IKey) => {
+const Key = ({ value, isArray }: { value: string; isArray: boolean; }) => {
     if (isArray) {
         return <Mark type="number" text={value} />;
     }

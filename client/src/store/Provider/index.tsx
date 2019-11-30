@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { COMPARE_REQ } from 'constants/compare';
 import { EQUALITY_TYPE_STRICT } from 'constants/equality';
+import { IAlertMap, ILog } from 'constants/interfaces';
 import { AUTHOR_LINK, FEEDBACK_LINK } from 'constants/links';
 import { LOG_INFO } from 'constants/log';
 import { Provider } from 'store/Context';
@@ -13,8 +14,7 @@ interface IProviderProps {
     children: any;
 }
 
-interface IProviderState {
-    alerts: Map<string, object>;
+interface IProviderState extends IAlertMap {
     author: string;
     changeEqualityTypes: (event: React.SyntheticEvent) => void;
     changeObj: (event: React.SyntheticEvent) => void;
@@ -22,7 +22,7 @@ interface IProviderState {
     equalityTypes: string;
     feedback: string;
     isCompare: boolean;
-    log: object;
+    log: ILog;
     objObject: object;
     objStr: string;
     toggleCompare: (event: React.SyntheticEvent) => void;
@@ -42,7 +42,7 @@ class AppProvider extends React.Component<IProviderProps, IProviderState> {
             equalityTypes: EQUALITY_TYPE_STRICT,
             feedback: FEEDBACK_LINK,
             isCompare: false,
-            log: { text: '', type: null },
+            log: { text: '', type: '' },
             objObject: {},
             objStr: '',
             toggleCompare: this.toggleCompare.bind(this),
@@ -52,7 +52,7 @@ class AppProvider extends React.Component<IProviderProps, IProviderState> {
     }
 
     public toggleCompare() {
-        const log = {
+        const log: ILog = {
             text: 'toggle compare',
             type: LOG_INFO,
         };
@@ -62,7 +62,7 @@ class AppProvider extends React.Component<IProviderProps, IProviderState> {
 
     public changeEqualityTypes(event) {
         const { value } = event.target;
-        const log = {
+        const log: ILog = {
             text: 'change equality types',
             type: LOG_INFO,
         };
@@ -81,13 +81,13 @@ class AppProvider extends React.Component<IProviderProps, IProviderState> {
 
     public changeAlerts() {
         const { toolObject, objObject, equalityTypes, isCompare } = this.state;
-        const isEmpty = (obj) => Object.keys(obj).length === 0;
+        const isEmpty: (obj: any) => boolean = (obj) => Object.keys(obj).length === 0;
 
         if (!isEmpty(toolObject) && !isEmpty(objObject) && isCompare) {
             const alerts = equalAlerts(toolObject, objObject, equalityTypes);
-            let req = 0;
-            let diff = 0;
-            let text = '';
+            let req: number = 0;
+            let diff: number = 0;
+            let text: string = '';
 
             alerts.forEach((alert) => {
                 if (!alert.scalar) { return; }
@@ -104,10 +104,8 @@ class AppProvider extends React.Component<IProviderProps, IProviderState> {
                 text = 'objects are equal';
             }
 
-            this.setState({
-                alerts,
-                log: { text, type: LOG_INFO },
-            });
+            const log: ILog = { text, type: LOG_INFO };
+            this.setState({ alerts, log });
         }
     }
 

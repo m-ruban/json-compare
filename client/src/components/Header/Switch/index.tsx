@@ -6,12 +6,7 @@ import trl from 'modules/translation';
 
 import 'components/Header/Switch/Switch.less';
 
-interface ISwitchProps {
-    isCompare: boolean;
-    toggleCompare: () => void;
-}
-
-const Switch = ({ isCompare, toggleCompare }: ISwitchProps) => {
+const Switch = ({ isCompare, toggleCompare }: { isCompare: boolean; toggleCompare: () => void; }) => {
     const onParseClick = React.useCallback(() => {
         if (!isCompare) {
             return;

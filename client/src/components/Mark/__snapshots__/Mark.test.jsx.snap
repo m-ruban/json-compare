@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Mark /> Renders correctly 1`] = `
+<span
+  class="json-mark json-mark_number badge badge-json"
+>
+  test
+</span>
+`;

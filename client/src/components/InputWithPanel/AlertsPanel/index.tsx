@@ -3,21 +3,13 @@ import { Col, Row } from 'reactstrap';
 
 import Mark from 'components/Mark';
 import { COMPARE_REQ } from 'constants/compare';
+import { IAlertMap } from 'constants/interfaces';
 import withConsumer from 'hoc/withConsumer';
 import trl from 'modules/translation';
 
 import 'components/InputWithPanel/AlertsPanel/AlertsPanel.less';
 
-interface IAlert {
-    res: string;
-    scalar: boolean;
-}
-
-interface IAlertsPanelProps {
-    alerts: Map<string, IAlert>;
-}
-
-const AlertsPanel = ({ alerts }: IAlertsPanelProps) => {
+const AlertsPanel = ({ alerts }: IAlertMap) => {
     const nodesAlerts = [];
     const nodesRequired = [];
 

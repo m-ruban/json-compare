@@ -4,7 +4,7 @@ import { Col, Row } from 'reactstrap';
 
 import trl from 'modules/translation';
 
-const Index = () => (
+const NotFound = () => (
     <Row>
         <Col xs={12}>
             <h4>{trl('NotFound.title')}</h4>
@@ -15,4 +15,4 @@ const Index = () => (
     </Row>
 );
 
-export default Index;
+export default NotFound;

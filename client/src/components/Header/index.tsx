@@ -8,11 +8,7 @@ import Links from 'components/Header/Links';
 import Switch from 'components/Header/Switch';
 import withConsumer from 'hoc/withConsumer';
 
-interface IHeaderProps {
-    isCompare: string;
-}
-
-const Header = ({ isCompare }: IHeaderProps) => (
+const Header = ({ isCompare }: { isCompare: string }) => (
     <header className="header">
         <Navbar className="header__nav-bar" expand="md" light>
             <NavbarBrand>

@@ -8,11 +8,7 @@ import trl from 'modules/translation';
 
 import 'components/Header/Links/Links.less';
 
-interface ILinksProps {
-    feedback: string;
-}
-
-const Links = ({ feedback }: ILinksProps) => {
+const Links = ({ feedback }: { feedback: string }) => {
     const [isOpen, setOpen] = React.useState(false);
     const toggle = React.useCallback(() => {
         setOpen(!isOpen);

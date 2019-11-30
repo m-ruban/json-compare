@@ -1,13 +1,9 @@
+import { ILog } from 'constants/interfaces';
 import { LOG_ERROR, LOG_INFO } from 'constants/log';
 
 interface IParseResult {
     success: boolean;
     value: any[] | object | string;
-}
-
-interface ILog {
-    text: string;
-    type: string;
 }
 
 export function parseAndLog(str: string): { log: ILog, obj: any[] | object } {

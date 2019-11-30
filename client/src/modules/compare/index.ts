@@ -1,10 +1,7 @@
 import { COMPARE_DIFF, COMPARE_EQ, COMPARE_REQ } from 'constants/compare';
 import { EQUALITY_TYPE_IGNORE, EQUALITY_TYPE_NOT_STRICT, EQUALITY_TYPE_STRICT } from 'constants/equality';
-
-interface IAlert {
-    res: string;
-    scalar: boolean;
-}
+import { IAlert } from 'constants/interfaces';
+import {string} from 'prop-types';
 
 let equalityTypes: string;
 let state;
@@ -16,7 +13,7 @@ export function equalAlerts(left: any[] | object, right: any[] | object, type: s
 }
 
 const findByPath = (obj: any, paths: string[]): any | undefined => {
-    let current = obj;
+    let current: any = obj;
     for (const path of paths) {
         if (current[path] === undefined) {
             return undefined;

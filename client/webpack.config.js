@@ -4,7 +4,7 @@ const env = require('dotenv').config();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const rootPath = path.resolve(__dirname, 'src');
-const entryPath = path.resolve(rootPath, 'index.js');
+const entryPath = path.resolve(rootPath, 'index.tsx');
 const outputPath = path.resolve(__dirname, 'dist');
 const modeEnv = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 

@@ -7,11 +7,7 @@ import trl from 'modules/translation';
 
 import 'components/Footer/Footer.less';
 
-interface IFooterProps {
-    author: string;
-}
-
-const Footer = ({ author }: IFooterProps) => (
+const Footer = ({ author }: { author: string; }) => (
     <footer className="footer">
         <Container className="footer__container" fluid>
             <Row>
