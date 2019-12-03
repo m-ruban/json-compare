@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Switch /> Renders correctly 1`] = `
+Array [
+  <span
+    class="switch switch_parse switch_pointer"
+  >
+    parse
+  </span>,
+  <span
+    class="switch__divider"
+  >
+    &
+  </span>,
+  <span
+    class="switch switch_compare"
+  >
+    compare
+  </span>,
+]
+`;

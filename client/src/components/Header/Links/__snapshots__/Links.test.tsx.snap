@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Links /> Renders correctly 1`] = `
+Array [
+  <button
+    class="navbar-toggler"
+    type="button"
+  >
+    <span
+      class="navbar-toggler-icon"
+    />
+  </button>,
+  <div
+    class="collapse navbar-collapse"
+  >
+    <ul
+      class="ml-auto navbar-nav"
+    >
+      <li
+        class="examples dropdown nav-item"
+      >
+        <a
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="examples__toggle dropdown-toggle nav-link"
+          href="#"
+        >
+          Examples
+        </a>
+        <div
+          aria-hidden="true"
+          class="bg-dark examples__dropdown dropdown-menu"
+          role="menu"
+          tabindex="-1"
+        >
+          <button
+            class="examples__dropdown-item dropdown-item"
+            role="menuitem"
+            tabindex="0"
+            type="button"
+          >
+            Tool Example
+          </button>
+          <button
+            class="examples__dropdown-item dropdown-item"
+            role="menuitem"
+            tabindex="0"
+            type="button"
+          >
+            Object Example
+          </button>
+        </div>
+      </li>
+      <li
+        class="nav-item"
+      >
+        <a
+          class="nav-link"
+        >
+          <span
+            class="faq-link"
+          >
+            FAQ
+          </span>
+        </a>
+      </li>
+      <li
+        class="nav-item"
+      >
+        <a
+          class="feedback nav-link"
+          target="_blank"
+        >
+          Feedback
+        </a>
+      </li>
+    </ul>
+  </div>,
+]
+`;

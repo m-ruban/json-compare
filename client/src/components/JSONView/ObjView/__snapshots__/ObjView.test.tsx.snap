@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ObjView /> Renders correctly (obj) 1`] = `
+Array [
+  <span
+    class="json-mark json-mark_switch badge badge-json"
+  >
+    -
+  </span>,
+  "{",
+  <div
+    style="margin-left:12px"
+  >
+    <span>
+      "id"
+    </span>
+    : 
+    <span
+      class="json-mark json-mark_number badge badge-json"
+    >
+      number
+    </span>
+    <span>
+      1
+    </span>
+  </div>,
+  "}",
+]
+`;
+
+exports[`<ObjView /> Renders correctly 1`] = `
+Array [
+  <span
+    class="json-mark json-mark_switch badge badge-json"
+  >
+    -
+  </span>,
+  "{]",
+]
+`;

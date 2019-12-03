@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> Renders correctly 1`] = `
+<footer
+  class="footer"
+>
+  <div
+    class="footer__container container-fluid"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="footer__author text-muted py-3"
+      >
+        Author - 
+        <a
+          class="footer__link"
+          href="test_link"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          wardak
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+`;

@@ -2,11 +2,7 @@ import React from 'react';
 
 import Mark from 'components/Mark';
 import { COMPARE_DIFF, COMPARE_REQ } from 'constants/compare';
-
-interface IAlert {
-    res: string;
-    scalar: boolean;
-}
+import { IAlert } from 'constants/interfaces';
 
 interface IAlertProps {
     alert: IAlert;

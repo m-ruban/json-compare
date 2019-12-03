@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ObjView /> Renders correctly (obj) 1`] = `
+<div
+  class="col-7"
+>
+  <div
+    class="json-view bg-dark"
+  >
+    <span
+      class="json-mark json-mark_switch badge badge-json"
+    >
+      -
+    </span>
+    {
+    <div
+      style="margin-left:12px"
+    >
+      <span>
+        "id"
+      </span>
+      : 
+      <span
+        class="json-mark json-mark_number badge badge-json"
+      >
+        number
+      </span>
+      <span>
+        1
+      </span>
+    </div>
+    }
+  </div>
+</div>
+`;
+
+exports[`<ObjView /> Renders correctly 1`] = `
+<div
+  class="col-7"
+>
+  <div
+    class="json-view bg-dark"
+  >
+    <span
+      class="json-mark json-mark_switch badge badge-json"
+    >
+      -
+    </span>
+    {]
+  </div>
+</div>
+`;

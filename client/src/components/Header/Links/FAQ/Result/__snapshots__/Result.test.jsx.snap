@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Result /> Renders correctly 1`] = `
+<div>
+  <ol>
+    <li>
+      <span
+        class="json-mark json-mark_req badge badge-json badge-pill"
+      >
+        !
+      </span>
+       - required key
+    </li>
+    <li>
+      <span
+        class="json-mark json-mark_diff badge badge-json badge-pill"
+      >
+        !
+      </span>
+       - the key exists, but it's value doesn't match the required one
+    </li>
+  </ol>
+</div>
+`;

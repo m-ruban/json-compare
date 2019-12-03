@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CompositeView /> Renders correctly 1`] = `
+Array [
+  <span
+    class="json-mark json-mark_switch badge badge-json"
+  >
+    -
+  </span>,
+  "{",
+  <div
+    style="margin-left:6px"
+  >
+    <span>
+      "id"
+    </span>
+    : 
+    <span
+      class="json-mark json-mark_number badge badge-json"
+    >
+      number
+    </span>
+    <span>
+      1
+    </span>
+  </div>,
+  "}",
+]
+`;

@@ -31,6 +31,7 @@ module.exports = {
             hoc: path.resolve(__dirname, 'src/hoc'),
             store: path.resolve(__dirname, 'src/store'),
             styles: path.resolve(__dirname, 'src/styles'),
+            tests: path.resolve(__dirname, 'src/tests'),
         },
         extensions: ['.ts', '.tsx', '.jsx', '.js', '.less', '.css', '.json', '.svg', '.gif', '.jpg'],
     },

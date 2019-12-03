@@ -17,12 +17,12 @@ const PrimitiveType = ({ value, showAlerts, showRequired, path, alerts }: IPrimi
     const key = path.join('-');
     const rValue = value !== null ? value.toString() : 'null';
     return (
-        <Fragment>
+        <span>
             {mark}
             {rValue}
             {mark}
             <Alert alert={alerts.get(key)} showAlerts={showAlerts} showRequired={showRequired} />
-        </Fragment>
+        </span>
     );
 };
 

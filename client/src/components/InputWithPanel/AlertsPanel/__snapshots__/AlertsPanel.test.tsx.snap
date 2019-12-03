@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AlertsPanel /> Renders correctly (pill false) 1`] = `
+<div
+  class="pt-4 alerts"
+>
+  <div
+    class="alerts__items bg-dark"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-6"
+      >
+        <span
+          class="json-mark json-mark_diff badge badge-json badge-pill"
+        >
+          !
+        </span>
+         
+        <b>
+          Alerts
+        </b>
+        <br />
+        <div>
+          test
+        </div>
+      </div>
+      <div
+        class="col-6"
+      >
+        <span
+          class="json-mark json-mark_req badge badge-json badge-pill"
+        >
+          !
+        </span>
+         
+        <b>
+          Required
+        </b>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+`;

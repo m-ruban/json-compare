@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Log /> Renders correctly (empty log) 1`] = `null`;
+
+exports[`<Log /> Renders correctly (not empty log) 1`] = `
+<div
+  class="log pr-3 py-3"
+>
+  <div
+    class="log__item"
+  >
+    <div
+      class="log__info"
+    >
+      <span
+        class="log__type"
+      >
+        log.info
+      </span>
+      : test
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Types /> Renders correctly 1`] = `
+<div>
+  This application has three types of comparison:
+  <ol>
+    <li>
+      STRICT - The application is uses not strict equality (13 == "13" is true)
+    </li>
+    <li>
+      NOT_STRICT - The application is uses strict equality (13 == "13" isn't true, but 13 === 13 is true)
+    </li>
+    <li>
+      IGNORE - The application is ignores value of the key
+    </li>
+  </ol>
+</div>
+`;

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputWithPanel /> Renders correctly 1`] = `
+<div
+  class="col-5"
+>
+  <textarea
+    class="json-input bg-dark json-input_with-panel form-control"
+    name="text"
+    placeholder="Insert JSON string"
+  />
+  <div
+    class="pt-4 alerts"
+  >
+    <div
+      class="alerts__items bg-dark"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-6"
+        >
+          <span
+            class="json-mark json-mark_diff badge badge-json badge-pill"
+          >
+            !
+          </span>
+           
+          <b>
+            Alerts
+          </b>
+          <br />
+          <div>
+            test
+          </div>
+        </div>
+        <div
+          class="col-6"
+        >
+          <span
+            class="json-mark json-mark_req badge badge-json badge-pill"
+          >
+            !
+          </span>
+           
+          <b>
+            Required
+          </b>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

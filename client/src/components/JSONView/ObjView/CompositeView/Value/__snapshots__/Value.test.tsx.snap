@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Value /> Renders correctly (obj) 1`] = `
+<div
+  style="margin-left:6px"
+>
+  <span>
+    "id"
+  </span>
+  : 
+  <span
+    class="json-mark json-mark_number badge badge-json"
+  >
+    number
+  </span>
+  <span>
+    1
+  </span>
+</div>
+`;
+
+exports[`<Value /> Renders correctly 1`] = `null`;

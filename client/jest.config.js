@@ -6,6 +6,7 @@ module.exports = {
     setupFilesAfterEnv: ['<rootDir>/src/tests/setupTests.ts'],
     transform: {
         '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+        '^.+\\.(ts|tsx)$': 'ts-jest',
     },
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
@@ -16,10 +17,8 @@ module.exports = {
         '^hoc(.*)$': '<rootDir>/src/hoc$1',
         '^store(.*)$': '<rootDir>/src/store$1',
         '^modules(.*)$': '<rootDir>/src/modules$1',
+        '^tests(.*)$': '<rootDir>/src/tests$1',
     },
-    collectCoverage: true,
-    collectCoverageFrom: ['**/*.{js,jsx,ts,tsx}', '!**/node_modules/**', '!**/coverage/**'],
-    coverageDirectory: './coverage',
-    coverageReporters: ['json'],
+    collectCoverage: false,
     snapshotSerializers: ['enzyme-to-json/serializer'],
 };
