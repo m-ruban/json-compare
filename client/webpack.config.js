@@ -15,7 +15,7 @@ module.exports = {
     output: {
         filename: modeEnv === 'development' ? '[name].js' : '[name]-[chunkhash].js',
         path: outputPath,
-        publicPath: process.env.NODE_ENV === 'production' ? '/static' : '/',
+        publicPath: '/',
     },
     devServer: {
         historyApiFallback: true,
