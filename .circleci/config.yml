@@ -19,7 +19,7 @@ jobs:
             docker push $IMAGE_NAME
       - add_ssh_keys:
           fingerprints:
-            - "a5:f4:b3:64:9a:81:88:01:7a:7b:b6:72:2e:35:7b:68"
+            - "3b:90:94:f9:b3:f9:66:2d:1f:23:e6:33:7d:1e:90:3b"
       - run:
           name: Fix error with resolve hostname
           command: |
