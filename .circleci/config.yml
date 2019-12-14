@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  build:
+    branches:
+      only:
+        - master
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Build and push image
+          command: |
+            export IMAGE_NAME=$DOCKER_HUB_USERNAME/$APP_NAME:${CIRCLE_SHA1}
+            docker build -t $IMAGE_NAME --label $APP_NAME .
+            docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
+            docker push $IMAGE_NAME
+      - add_ssh_keys:
+          fingerprints:
+            - "19:d6:5f:6e:18:09:5e:60:aa:9c:b6:77:76:8a:a1:f0"
+      - run:
+          name: Fix error with resolve hostname
+          command: |
+            ssh-keyscan $SERVER >> ~/.ssh/known_hosts
+      - run:
+          name: Install new image
+          command: |
+            export IMAGE_NAME=$DOCKER_HUB_USERNAME/$APP_NAME:${CIRCLE_SHA1}
+            ssh $USERNAME_DEPLOY@$SERVER ./deploy-utils/deploy.sh -i $IMAGE_NAME -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD -a $APP_NAME -e $OUTER_PORT -z $INNER_PORT
