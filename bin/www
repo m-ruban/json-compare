@@ -6,23 +6,9 @@
 
 const app = require('../app');
 const debug = require('debug')('json-compare:server');
-const fs = require('fs');
 
 let protocol = require('http');
 let options = {};
-if (process.env.NODE_ENV === "production"){
-  protocol = require('https');
-  options = {
-    key: fs.readFileSync('/cert/jsoncompare.key'),
-    cert: fs.readFileSync('/cert/jsoncompare.crt')
-  }
-
-  const redirect = require('http');
-  redirect.createServer(function (req, res) {
-    res.writeHead(301, { "Location": "https://" + req.headers.host + req.url });
-    res.end();
-  }).listen(80);
-}
 
 /**
  * Get port from environment and store in Express.
