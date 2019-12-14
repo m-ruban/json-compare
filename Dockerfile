@@ -19,7 +19,7 @@ RUN cd client/ &&\
     npm run build
 
 # expose the port
-EXPOSE 80
+EXPOSE 3001
 
 #run
 CMD npm run start
