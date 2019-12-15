@@ -16,6 +16,7 @@ RUN npm install
 # dependencies (client)
 RUN cd client/ &&\
     npm install &&\
+    npm test &&\
     npm run build
 
 #run
