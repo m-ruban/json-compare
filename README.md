@@ -1,1 +1,1 @@
-URL - https://jsoncompare.ru/
+URL - http://jsoncompare.ru/
