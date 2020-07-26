@@ -10,13 +10,17 @@ exports[`<Header /> Renders correctly 1`] = `
     <a
       class="navbar-brand"
     >
-      JS
-      <img
-        alt="icon"
-        class="header__logo"
-        src="test-file-stub"
-      />
-      N
+      <div
+        class="header__app"
+      >
+        JS
+        <img
+          alt="icon"
+          class="header__logo"
+          src="test-file-stub"
+        />
+        N
+      </div>
     </a>
     <span
       class="switch switch_parse switch_pointer"

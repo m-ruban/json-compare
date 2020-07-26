@@ -12,8 +12,10 @@ const Header = ({ isCompare }: { isCompare: string }) => (
     <header className="header">
         <Navbar className="header__nav-bar" expand="md" light>
             <NavbarBrand>
-                JS
-                <img className="header__logo" src={Logo} alt="icon" />N
+                <div className="header__app">
+                    JS
+                    <img className="header__logo" src={Logo} alt="icon" />N
+                </div>
             </NavbarBrand>
             <Switch />
             {isCompare && <EqualityTypes />}
